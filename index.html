@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    </link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- navbar starts -->
+    <div class="navbar">
+        <a class="active" href="#"><i class="fa fa-fw fa-home"></i> </a>
+        <a href="#"><i class="fa-sharp fa-solid fa-gear"></i> </a>
+        <a href="#"><i class="fa-sharp fa-solid fa-magnifying-glass"></i> </a>
+        <a href="#"><i class="fa-solid fa-user"></i> </a>
+        <a href="#"><i class="fa-solid fa-calendar-days"></i></a>
+        <a href="#"><i class="fa-solid fa-user-shield"></i> </a>
+        <a href="#"><i class="fa-solid fa-shield"></i></a>
+        <a href="#"><i class="fa-solid fa-check-double"></i></a>
+
+        <a href="#"><i class="fa-solid fa-notes-medical"></i></a>
+        <a href="#"><i class="fa-solid fa-flask"></i></a>
+        <a href="#"><i class="fa-solid fa-prescription"></i></a>
+        <a href="#"><i class="fa-solid fa-prescription"></i></a>
+        <a href="#"><i class="fa-sharp fa-solid fa-file-invoice"></i> </a>
+        <a href="#"><i class="fa-solid fa-dollar-sign"></i></a>
+        <a href="#"><i class="fa-solid fa-file-invoice-dollar"></i></a>
+
+        <a href="#"><i class="fa-solid fa-shield"></i></a>
+        <a href="#"><i class="fa-solid fa-check-double"></i></a>
+        <a href="#"><i class="fa-solid fa-notes-medical"></i></a>
+        <a href="#"><i class="fa-solid fa-flask"></i></a>
+        <a href="#"><i class="fa-solid fa-prescription"></i></a>
+        <a href="#"><i class="fa-solid fa-prescription"></i></a>
+        <a href="#"><i class="fa-sharp fa-solid fa-file-invoice"></i> </a>
+        <a href="#"><i class="fa-solid fa-dollar-sign"></i></a>
+        <a href="#"><i class="fa-solid fa-file-invoice-dollar"></i></a>
+        <div class="topnav-right">
+            <form action="#">
+                <input type="text" name="searchbox" id="searchpatient" placeholder="Search Patient">
+            </form>
+            <a href="#about"><i class="fa-solid fa-calendar-week"></i></a>
+            <a href="#about"><i class="fa-solid fa-circle-question"></i></a>
+            <a href="#about"><i class="fa-solid fa-lock"></i></a>
+            <a href="#about" class="nav-link"><i class="fa-solid fa-circle-user"></i></a>
+        </div>
+
+    </div>
+    <!-- navbar ends here -->
+
+    <!-- Main div starts from here -->
+    <div class="patient-details">
+        <p>Patient Bar</p>
+        <!-- <img class="pimage"src="styles\profile.jpg" alt="">
+            <span class="patient-details-span">Mr William Johns (PT000000001)<i class="fa-solid fa-folder"></i><i class="fa-solid fa-mars"></i>Male<i class="fa-solid fa-calendar-days"></i>02/09/1981 (41yrs 3mnts 1day)</span>
+                 -->
+
+        <!-- sidenav starts from here  -->
+        <div>
+            <main style="height: calc(100% - 8rem) ;">
+                <aside>
+                    <div class="sidenav">
+                        <a href="#about">Dashboard</a>
+                        <a href="#services">Demographics</a>
+                        <a href="#clients">Insurance</a>
+                        <a href="#contact">Case</a>
+                        <a href="#about">Contacts</a>
+                        <a href="#services">Employer</a>
+                        <a href="#clients">Appointments</a>
+                        <a href="#contact">Encounters</a>
+                        <a href="#about">Documents</a>
+                        <a href="#services">Notes & Alerts</a>
+                        <a href="#clients">Forms</a>
+                        <a href="#contact">Consents</a>
+                        <a href="#about">Reminder Preference</a>
+                        <hr class="separator">
+                        <a href="#services">Allergy</a>
+                        <a href="#clients">Diagnosis</a>
+                        <a href="#contact">Family History</a>
+                        <a href="#about">Prescription</a>
+                        <a href="#services">Lab</a>
+                        <a href="#clients">Immunization</a>
+                        <a href="#contact">Vitals</a>
+                        <hr class="separator">
+                        <a href="#about">Authorization</a>
+                        <a href="#contact">Claims</a>
+                        <a href="#services">Receipt</a>
+                        <a href="#clients">Open Credit</a>
+                        <a href="#contact">Statements</a>
+                        <a href="#contact">Ledger</a>
+                    </div>
+                </aside>
+            </main>
+        </div>
+        <!-- sidenav ends here  -->
+
+        <!-- forms -->
+        <div class="form-div">
+            
+
+
+
+            <!-- Profile div starts-->
+            <div class="profile">
+                                            <div class="column">
+                                                <img class="pimage" src="styles\profile.jpg" alt="Patient">
+                                                <div>PT0000000045</div>
+                                                <div>
+                                                        Prefix: <input type="text" name="" id=""><br>
+                                                        First Name*: <input type="text" name="" id=""><br>
+                                                        Middle Name: <input type="text" name="" id=""><br>
+                                                        Last Name*: <input type="text" name="" id=""><br>
+                                                        Last Nmae 2: <input type="text" name="" id=""><br>
+                                                        Suffix: <input type="text" name="" id=""><br>
+                                                        AKA: <input type="text" name="" id="">
+                                                 </div>
+                                            </div>
+                                        <div class="column">
+                                                Sex*: <select name="" id="">
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Unknown">Unknown</option>
+                    </select><br>
+                                                DOB: <input type="date" name="" id=""><br>
+                                                <span>59 Y, 4 M, 29 D</span><br>
+                                                Pref Language: <select name="" id="">
+                                                        <option value="">English</option>
+                                                        <option value="">Hindi</option>
+                                                        <option value="">Gujarati</option>
+                                                    </select><br>
+                                                Interpreter: <input type="checkbox" name="" id=""><br>
+                                                Status: <select name="" id="">
+                                                        <option value="">First Appointment Pending</option>
+                                                        <option value="">Registration Entry Pending</option>
+                                                        <option value="">Immunizations Pending</option>
+                                                        <option value="">Insurance inclusion Pending</option>
+                                                        <option value="">Insurace12</option>
+                                                    </select><br>
+                                                Risk: <span>High</span><i class="fa-solid fa-pencil"></i><br>
+                                                Marital Status: <select name="" id="">
+                                                        <option value="">Married</option>
+                                                        <option value="">Never Married</option>
+                                                        <option value="">Divorced</option>
+                                                    </select><br>
+                                                SSN: <input type="text" name="" id=""><br>
+                                                Race: <select name="" id="">
+                                                        <option value="">White</option>
+                                                        <option value="">Asian</option>
+                                                        <option value="">Black</option>
+                                                        <option value="">Other</option>
+                                                    </select><br>
+                                                Ethnicity: <select name="" id="">
+                                                        <option value="">Other Ethnicity</option>
+                                                        <option value="">Unreported/Refuced to report</option>
+                        <option value="">Hispanic/Latino</option>
+                                                        <option value="">Non-Hispanic/Latino</option>
+                                                   
+                    </select>
+                                            </div>
+                                        <div class="column">
+                                                Self Pay: <input type="checkbox" name="" id=""><br>
+                                                Default Facility: <select name="" id="">
+                                                        <option value="">1</option>
+                                                    </select><br>
+                                                Default Provider: <select name="" id="">
+                                                        <option value="">1</option>
+                                                    </select><br>
+                                                Timezone: <select name="" id="">
+                                                        <option value="">1</option>
+                                                    </select><br>
+                                                Default Pharmacy: <select name="" id="">
+                                                        <option value="">1</option>
+                                                    </select><br>
+                                                Use current pharmacy for all Rx: <input type="checkbox" name=""
+                        id=""><br>
+                                                PCP same as Provider: <input type="checkbox" name="" id=""><br>
+                                                PCP: <select name="" id="">
+                                                        <option value="">1</option>
+                                                    </select><br>
+                                                Fee Schedule: <select name="" id="" disabled="disabled"></select>
+                                            </div>
+             </div>
+             <!-- Profile div ends -->
+
+
+              <!-- Profile div starts-->
+              <div class="profile">
+                                            <div class="column">
+                                               <p>Contact details</p>
+                                                <div>
+                                                        Prefix: <input type="text" name="" id=""><br>
+                                                        First Name*: <input type="text" name="" id=""><br>
+                                                        Middle Name: <input type="text" name="" id=""><br>
+                                                        Last Name*: <input type="text" name="" id=""><br>
+                                                        Last Nmae 2: <input type="text" name="" id=""><br>
+                                                        Suffix: <input type="text" name="" id=""><br>
+                                                        AKA: <input type="text" name="" id="">
+                                                 </div>
+                                            </div>
+                                        <div class="column">
+                                                Sex*: <select name="" id="">
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Unknown">Unknown</option>
+                    </select><br>
+                                                DOB: <input type="date" name="" id=""><br>
+                                                <span>59 Y, 4 M, 29 D</span><br>
+                                                Pref Language: <select name="" id="">
+                                                        <option value="">English</option>
+                                                        <option value="">Hindi</option>
+                                                        <option value="">Gujarati</option>
+                                                    </select><br>
+                                                Interpreter: <input type="checkbox" name="" id=""><br>
+                                                Status: <select name="" id="">
+                                                        <option value="">First Appointment Pending</option>
+                                                        <option value="">Registration Entry Pending</option>
+                                                        <option value="">Immunizations Pending</option>
+                                                        <option value="">Insurance inclusion Pending</option>
+                                                        <option value="">Insurace12</option>
+                                                    </select><br>
+                                                Risk: <span>High</span><i class="fa-solid fa-pencil"></i><br>
+                                                Marital Status: <select name="" id="">
+                                                        <option value="">Married</option>
+                                                        <option value="">Never Married</option>
+                                                        <option value="">Divorced</option>
+                                                    </select><br>
+                                                SSN: <input type="text" name="" id=""><br>
+                                                Race: <select name="" id="">
+                                                        <option value="">White</option>
+                                                        <option value="">Asian</option>
+                                                        <option value="">Black</option>
+                                                        <option value="">Other</option>
+                                                    </select><br>
+                                                Ethnicity: <select name="" id="">
+                                                        <option value="">Other Ethnicity</option>
+                                                        <option value="">Unreported/Refuced to report</option>
+                        <option value="">Hispanic/Latino</option>
+                                                        <option value="">Non-Hispanic/Latino</option>
+                                                   
+                    </select>
+                                            </div>
+                                        <div class="column">
+                                                Self Pay: <input type="checkbox" name="" id=""><br>
+                                                Default Facility: <select name="" id="">
+                                                        <option value="">1</option>
+                                                    </select><br>
+                                                Default Provider: <select name="" id="">
+                                                        <option value="">1</option>
+                                                    </select><br>
+                                                Timezone: <select name="" id="">
+                                                        <option value="">1</option>
+                                                    </select><br>
+                                                Default Pharmacy: <select name="" id="">
+                                                        <option value="">1</option>
+                                                    </select><br>
+                                                Use current pharmacy for all Rx: <input type="checkbox" name=""
+                        id=""><br>
+                                                PCP same as Provider: <input type="checkbox" name="" id=""><br>
+                                                PCP: <select name="" id="">
+                                                        <option value="">1</option>
+                                                    </select><br>
+                                                Fee Schedule: <select name="" id="" disabled="disabled"></select>
+                                            </div>
+             </div>
+             <!-- Profile div ends -->
+
+
+
+
+        </div>
+        <!-- Main div ends here -->
+<!-- 
+           <div class="buttons">
+            <div class="active">
+                <input type="checkbox"><span>Active</span>
+                <button type="button">Verify</button>
+                <button type="button">Cancel Changes</button>
+                <button type="button">Save</button>
+    
+            </div>
+          </div> -->
+    
+          
+        
+    <!-- </div>  -->
+
+
+</body>
+
+</html>
