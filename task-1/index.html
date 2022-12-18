@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="mainheader">
+            <div id="logo"></div>
+            <div class="nav-icons">
+                <div id="navbar">
+                    <a href="#"><i class="fa-sharp fa-solid fa-gear"></i></a>
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#"><i class="fa-solid fa-user"></i></a>
+                    <a href="#"><i class="fa-solid fa-calendar-days"></i></a>
+                    <a href="#"><i class="fa-solid fa-user-shield"></i></a>
+                    <a href="#"><i class="fa-solid fa-shield"></i></a>
+                    <a href="#"><i class="fa-solid fa-right-from-bracket"></i></a>
+                    <a href="#"><i class="fa-solid fa-calendar-plus"></i></a>
+                    <a href="#"><i class="fa-solid fa-flask"></i></a>
+                    <a href="#"><i class="fa-solid fa-prescription"></i></a>
+                    <a href="#"><i class="fa-solid fa-prescription"></i></a>
+                    <a href="#"><i class="fa-sharp fa-solid fa-file-invoice"></i></a>
+
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i></a>
+                    <a href="#"><i class="fa-solid fa-file-invoice-dollar"></i></a>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i></a>
+                    <a href="#"><i class="fa-solid fa-hand-holding-dollar"></i></a>
+                    <a href="#"><i class="fa-solid fa-money-check-dollar"></i></a>
+                    <a href="#"><i class="fa-solid fa-hand-holding-dollar"></i></a>
+                    <a href="#"><i class="fa-sharp fa-solid fa-sack-dollar"></i></a>
+                    <a href="#"><i class="fa-duotone fa-note"></i>
+
+
+                </div>
+                <div id="right-icons">
+                    <form action="#">
+                        <input type="text" name="searchbox" id="searchpatient"
+                            placeholder="&#128270; Search Patient - lname fname dob #ch" />
+                    </form>
+
+                    <a href="#about"><i class="fa-solid fa-calendar-week"></i></a>
+                    <a href="#about"><i class="fa-solid fa-circle-question"></i></a>
+                    <a href="#about"><i class="fa-solid fa-lock"></i></a>
+
+
+                </div>
+            </div>
+            <div id="account">
+                <i class="fa-solid fa-circle-user"></i>
+            </div>
+        </div>
+    </header>
+
+    <div id="main-div-nav"><!--main div : 1st container and 2nd rightbar-->
+        <!-- 1st part -->
+        <div id="container">
+            <!--container : 1st extra-nav/Patient-bar(height 50px) and 2nd part is maindiv(consists of scrollbar and content) -->
+            <div id="extra-nav">Patient-Bar</div>
+            <div id="maindiv"><!--maindiv: 1st sidebar and 2nd Patient-detail comtainer-->
+                <div class="sidebar">
+                    <a href="#about">Dashboard</a>
+                    <a href="#services">Demographics</a>
+                    <a href="#clients">Insurance</a>
+                    <a href="#contact">Case</a>
+                    <a href="#about">Contacts</a>
+                    <a href="#services">Employer</a>
+                    <a href="#clients">Appointments</a>
+                    <a href="#contact">Encounters</a>
+                    <a href="#about">Documents</a>
+                    <a href="#services">Notes & Alerts</a>
+                    <a href="#clients">Forms</a>
+                    <a href="#contact">Consents</a>
+                    <a href="#about">Reminder Preference</a>
+                    <hr class="separator" />
+                    <a href="#services">Allergy</a>
+                    <a href="#clients">Diagnosis</a>
+                    <a href="#contact">Family History</a>
+                    <a href="#about">Prescription</a>
+                    <a href="#services">Lab</a>
+                    <a href="#clients">Immunization</a>
+                    <a href="#contact">Vitals</a>
+                    <hr class="separator" />
+                    <a href="#about">Authorization</a>
+                    <a href="#contact">Claims</a>
+                    <a href="#services">Receipt</a>
+                    <a href="#clients">Open Credit</a>
+                    <a href="#contact">Statements</a>
+                    <a href="#contact">Ledger</a>
+                </div>
+                <div id="Patient-details"><!--Patient-details: 1st button part and 2nd profile container whole-->
+                    <div id="button-nav">
+                        <form id="checkbox">
+                            <input type="checkbox" id="active" name="active" value="active">
+                            <label for="active"> Active</label>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <a href="Re-verify" class="buttons">Re-verify</a>
+                            <i class="fa-regular fa-circle-check" style="color:green"></i>
+                            <a href="Cancel-changes" class="buttons">Cancel Changes</a>
+                            <a href="Save" class="save"><i class="fa-sharp fa-solid fa-triangle-exclamation"></i> Save
+                            </a>
+                        </form>
+                    </div>
+                    <div id="content">
+                        <div class="profile">
+                            <div class="column">
+                                <img src="images/profile.jpg" alt="profile">
+                                <p>PT0000000036</p>
+                                <form class="profileform">
+                                    <label for="prefix">Prefix:</label>
+                                    <input type="text" id="prefix" name="prefix" />
+                                    <br />
+
+                                    <label for="fname">First Name:</label>
+                                    <input type="text" id="fname" name="firstname" />
+                                    <br />
+
+                                    <label for="mname">Middle Name:</label>
+                                    <input type="text" id="mname" name="middlename" />
+                                    <br />
+
+                                    <label for="lname">Last Name:</label>
+                                    <input type="text" id="lname" name="lastname" />
+                                    <br />
+
+                                    <label for="lname2">Last Name 2:</label>
+                                    <input type="text" id="lname2" name="lastname2" />
+                                    <br />
+
+                                    <label for="Suffix">Suffix:</label>
+                                    <input type="text" id="Suffix" name="Suffix" />
+                                    <br />
+
+                                    <label for="aka">AKA:</label>
+                                    <input type="text" id="aka" name="aka" />
+                                    <br />
+                                </form>
+                            </div>
+                            <div class="column">
+                                <form class="profileform" id="form2">
+                                    <label for="sex">Sex*:</label>
+                                    <select>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Unknown">Unknown</option>
+                                    </select>
+                                    <br/>
+                                    <label for="dob">DOB:</label>
+                                    <input type="date" id="date" name="date"><br/>
+                                    <span>56Y, 15D</span>
+                                    <br/>
+                                    <label for="pref">Pref Language:</label>
+                                    <select>
+                                        <option value="English">English</option>
+                                        <option value="Hindi">Hindi</option>
+                                        <option value="Gujarati">Gujarati</option>
+                                    </select>
+                                    <br />
+                                    <label for="Interpreter">Interpreter:</label>
+                                    <input type="checkbox" id="interpreter">
+                                    <br />
+                                    <label for="status">Status:</label>
+                                    <select name="pref" id="pref">
+                                        <option value=""></option>
+                                        <option value="First">First Appointment Pending</option>
+                                        <option value="Registration">Registration entry Pending</option>
+                                    </select>
+                                    <br />
+                                    <label for="risk">Risk:
+                                    <i class="fa-solid fa-circle-plus" style="color: #627d98;"></i>Add Risk</label>
+                                    <br />
+                                    <label for="maritalstatus">Marital Status:</label>
+                                    <select>
+                                        <option value="Married">Married</option>
+                                        <option value="UnMarried">UnMarried</option>
+                                        <option value="Divorced">Divorced</option>
+                                        <option value="Unknown">Unknown</option>
+                                    </select>
+                                    <label for="ssn">SSN:</label>
+                                    <input type="text" id="ssn" name="ssn" />
+                                    <br />
+                                    <label for="race">Race:</label>
+                                    <select>
+                                        <option value="White">White</option>
+                                        <option value="Asian">Asian</option>
+                                        <option value="African">African</option>
+                                    </select>
+                                    <label for="ethnicity">Ethnicity:</label>
+                                    <select>
+                                        <option value="Other Ethinicity">Other Ethnicity</option>
+                                        <option value="Unreported/Refused to Report">Unreported/Refused to Report</option>
+                                        <option value="Hispanic/Latino">Hispanic/Latino</option>
+                                        <option value="Non-Hispanic/Latino">Non-Hispanic/Latino</option>
+                                    </select>
+                                </form>
+                            </div>
+                            <div class="column">
+                                <form class="profileform" id="formTwo">
+                                    <label for="Self Pay">Self Pay:</label>
+                                    <input type="checkbox" id="Self Pay">
+                                    <br />
+                                    <label for="facility">Default Facility:</label>
+                                    <select>
+                                        <option value="(FACFRE)CMC Fresno">(FACFRE) CMC Fresno</option>
+                                        <option value="(FAC8) Aviral">(FAC8) Aviral</option>
+                                        <option value="(fac13) Facility">(fac13) Facility</option>
+                                    </select>
+                                    <label for="provider">Default Provider:</label>
+                                    <select>
+                                        <option value="Jones, Charlie | 1558444216">Jones, Charlie | 1558444216</option>
+                                    </select>
+                                    <label for="timezone">Timezone:</label>
+                                    <select>
+                                        <option value="(UTC-09:00) AKST - America...">(UTC-09:00) AKST - America...</option>
+                                    </select>
+                                    <label for="pharmacy">Default Pharmacy:</label>
+                                    <select>
+                                        <option value=""></option> 
+                                    </select>
+                                    <a href=""><i class="fa-solid fa-list"></i></a>
+                                    <label >Use current pharmacy for all Rx:</label>
+                                    <input type="checkbox" id="current pharmacy">
+                                    <br />
+                                    <label >PCP Same As Provider:</label>
+                                    <input type="checkbox" id="PCP">
+                                    <br />
+                                    <label >PCP :</label>
+                                    <select>
+                                        <option value=""></option> 
+                                    </select>
+                                    <label >Fee Schedule :</label>
+                                    <select>
+                                        <option value=""></option> 
+                                    </select>
+                                    <br />
+                                </form>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="details">
+                                <h4>Contact Details <i class="fa-solid fa-circle-plus" style="color: #627d98;"></i></h4> 
+                                <h5>Please set the preferences after adding the contact information, the section to set preference can be found below the contact section of the page.</h5>                    
+                                <div class="Twoforms">
+                                    <div class="leftform">
+                                        <form id="leftformheight">
+                                        <fieldset>
+                                            <legend>
+                                                <select name="" id="">
+                                                    <option value="">Home</option>
+                                                    <option value="">Work</option>
+                                                </select>
+                                            </legend>
+                                            <div class="address-field-header">
+                                                <h3>Address</h3><i class="fa-solid fa-trash" style="color: #627d98;"></i>
+                                            </div>
+                                            <label for="Street">Street</label><br/>
+                                            <input type="text"><br/>
+                                            <div id="sameline">
+                                                <div class="block">
+                                                    <label for="zip">Zip</label><br/>
+                                                    <input type="text" id="zip">
+                                                </div>
+                                                <div class="block">
+                                                    <label for="City">City</label><br/>
+                                                    <input type="text" id="city">
+                                                </div>
+                                                <div class="block">
+                                                    <label for="State">State</label><br/>
+                                                    <select  id="state">
+                                                        <option value=""></option>
+                                                        <option value="(AL) ALABAMA">(AL) ALABAMA</option>
+                                                    </select>
+                                                </div>
+                                                <!-- <fieldset></fieldset> -->
+                                                <div class="block">
+                                                    <label for="Country">Country</label><br/>
+                                                    <select  id="country">
+                                                        <option value="US">US</option>
+                                                        <option value="PR">PR</option>
+                                                    </select>
+                                                </div>
+                                                <div id="delete"><i class="fa-solid fa-trash" style="color: #627d98;"></i></div>
+                                            </div>
+                                           
+                                            <div class="phone">
+                                                <label>Phone <i class="fa-solid fa-circle-plus" style="color: #627d98;"></i></label> <br/>
+                                                <div class="phone-header">
+                                                    <p class="type">Type</p>
+                                                    <p class="code">Code</p>
+                                                    <p class="number">Number</p>
+                                                    <p class="">Ext</p>
+                                                </div>
+                                                <hr>
+                                                <div class="phone-inputs">
+                                                    <select name="type" id="type" class="type-input">
+                                                        <option value="Cell">Cell</option>
+                                                        <option value="Landline">Landline</option>
+                                                    </select>
+                                                    <select name="code" id="code" class="code-input">
+                                                        <option value="+1">+1</option>
+                                                        <option value="+91">+91</option>
+                                                    </select>
+                                                    <input type="text" name="number" id="number" class="number-input">
+                                                    <div id="delete"><i class="fa-solid fa-trash" style="color: #627d98;"></i></div>
+                                                </div>
+                                            </div>
+                                            <label>Fax <i class="fa-solid fa-circle-plus" style="color: #627d98;"></i></label> <br/>
+                                            <label>Email <i class="fa-solid fa-circle-plus" style="color: #627d98;"></i></label> <br/>
+                                            <label>Website <i class="fa-solid fa-circle-plus" style="color: #627d98;"></i></label> <br/>
+                                            
+                                        </fieldset>
+                                        </form>
+                                    </div>
+                                    <div class="rightform">
+                                        <form id="leftformheight">
+                                            <fieldset>
+                                                <legend>
+                                                    <select name="" id="">
+                                                        <option value="">Work</option>
+                                                        <option value="">Home</option>
+                                                    </select>
+                                                </legend>
+                                                <div class="address-field-header">
+                                                    <h3>Address</h3><i class="fa-solid fa-trash" style="color: #627d98;"></i>
+                                                </div>
+                                                <label for="Street">Street</label><br/>
+                                                <input type="text"><br/>
+                                                <div id="sameline">
+                                                    <div class="block">
+                                                        <label for="zip">Zip</label><br/>
+                                                        <input type="text" id="zip">
+                                                    </div>
+                                                    <div class="block">
+                                                        <label for="City">City</label><br/>
+                                                        <input type="text" id="city">
+                                                    </div>
+                                                    <div class="block">
+                                                        <label for="State">State</label><br/>
+                                                        <select  id="state">
+                                                            <option value=""></option>
+                                                            <option value="(AL) ALABAMA">(AL) ALABAMA</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="block">
+                                                        <label for="Country">Country</label><br/>
+                                                        <select  id="country">
+                                                            <option value="US">US</option>
+                                                            <option value="PR">PR</option>
+                                                        </select>
+                                                    </div>
+                                                    <div id="delete"><i class="fa-solid fa-trash" style="color: #627d98;"></i></div>
+                                                </div>
+                                               
+                                                <div class="phone">
+                                                    <label>Phone <i class="fa-solid fa-circle-plus" style="color: #627d98;"></i></label> <br/>
+                                                    <div class="phone-header">
+                                                        <p class="type">Type</p>
+                                                        <p class="code">Code</p>
+                                                        <p class="number">Number</p>
+                                                        <p class="">Ext</p>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="phone-inputs">
+                                                        <select name="type" id="type" class="type-input">
+                                                            <option value="Cell">Cell</option>
+                                                            <option value="Landline">Landline</option>
+                                                        </select>
+                                                        <select name="code" id="code" class="code-input">
+                                                            <option value="+1">+1</option>
+                                                            <option value="+91">+91</option>
+                                                        </select>
+                                                        <input type="text" name="number" id="number" class="number-input">
+                                                        <div id="delete"><i class="fa-solid fa-trash" style="color: #627d98;"></i></div>
+                                                    </div>
+                                                </div>
+                                                <label>Fax <i class="fa-solid fa-circle-plus" style="color: #627d98;"></i></label> <br/>
+                                                <label>Email <i class="fa-solid fa-circle-plus" style="color: #627d98;"></i></label> <br/>
+                                                <label>Website <i class="fa-solid fa-circle-plus" style="color: #627d98;"></i></label> <br/>
+                                                
+                                            </fieldset>
+                                            </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contactpreference">
+                            <div class="contact_details">
+                                <h4>Contact Preference </h4> 
+                                <div class="Table">
+                                    <table>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Address</th>
+                                            <th>Phone</th>
+                                            <th>Fax</th>
+                                            <th>Email</th>
+                                            <th>Website</th>
+                                        </tr>
+                                        <tr>
+                                            <td contenteditable='false'>Appointment Reminder</td>
+                                            <td></td>
+                                            <td contenteditable='true'></td>
+                                            <td></td>
+                                            <td contenteditable='true'></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mailing</td>
+                                            <td contenteditable='true'></td>
+                                            <td contenteditable='true'></td>
+                                            <td contenteditable='true'></td>
+                                            <td contenteditable='true'></td>
+                                            <td contenteditable='true'></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Primary</td>
+                                            <td contenteditable='true'></td>
+                                            <td contenteditable='true'></td>
+                                            <td contenteditable='true'></td>
+                                            <td contenteditable='true'></td>
+                                            <td contenteditable='true'></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Statement</td>
+                                            <td contenteditable='true'></td>
+                                            <td contenteditable='true'></td>
+                                            <td contenteditable='true'></td>
+                                            <td contenteditable='true'></td>
+                                            <td contenteditable='true'></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Preferred Comm.</th>
+                                            <td colspan="5">  
+                                                <label for="Type">Type: </label>
+                                                <select id="Type">
+                                                    <option value="Email">Email</option>
+                                                    <option value="Fax">Fax</option>
+                                                    <option value="Mail">Mail</option>
+                                                    <option value="Phone">Phone</option>
+                                                    <option value="Text">Text</option>
+                                                </select>
+                                                <label for="Value">Value: </label>
+                                                <select id="Value" readonly>
+                                                    <option value=""></option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>                   
+                        </div>
+                        <div class="profile1">
+                                <h4><i class="fa-solid fa-circle-plus" style="color: #627d98;"></i> Other Details</h4>              
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
