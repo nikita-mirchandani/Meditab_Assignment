@@ -415,7 +415,10 @@ td select{
     /* padding-top: 15px; */
 
 }
-
+button{
+    text-decoration: none;
+    border: none;
+}
 .profileform input[type=text] {
     width: auto;
     padding-left: 15px;
@@ -446,7 +449,9 @@ input[type=date] {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
+#interpreter{
+    align-items: left;
+}
 #addrisk {
     display: block;
 }
