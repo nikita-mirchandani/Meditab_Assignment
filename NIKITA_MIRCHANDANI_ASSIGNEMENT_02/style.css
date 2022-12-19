@@ -1,0 +1,553 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #d9e2ec; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    /* background: #555; */
+    background:#243b53 ;
+  }
+
+.mainheader {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    /*these 2 lines for dividing logo,nav-icons and right nav icons*/
+    /* align-items: center; */
+    background-color: #ffffff;
+    border: 0.5px solid rgb(216, 214, 233);
+}
+
+.nav-icons {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    /* these 2 lines for dividing nav-icons and right nav icons */
+    /* align-items: center; */
+    /* background-color: #ffffff; */
+    /* border: 0.5px solid rgb(216, 214, 233); */
+}
+
+#logo {
+    width: 3.5%;
+    margin-right: 10px;
+    line-height: 50px;
+    background-color: white;
+    background-image: url(images/logo.png);
+    /* background-repeat: no-repeat; */
+    background-size: 100% 100%;
+}
+
+#navbar {
+    width: 60%;
+    height: 39px;
+    background-color: white;
+    /* font-size: 23px; */
+}
+
+#navbar a,
+#right-icons a {
+    padding-right: 10px;
+    text-decoration: none;
+    color: #627d98;
+    font-size: 23px;
+}
+
+#right-icons {
+    width: auto;
+    height: 39px;
+    display: flex;
+    /* background-color: pink; */
+}
+
+#searchpatient {
+    width: 325px;
+    border-radius: 80px;
+    border: 1px solid #b0becb;
+    color: #243b53;
+    padding-left: 16px;
+    padding-right: 16px;
+    /* box-shadow: none; */
+    /* background: transparent; */
+}
+
+#account {
+    width: 3.5%;
+    line-height: 50px;
+    font-size: 40px;
+    background-color: white;
+}
+
+#main-div-nav {
+    width: 100%;
+    height: calc(100vh - 50px);
+    background-color: #f1f1f1;
+    display: flex;
+}
+
+#container {
+    width: 100%;
+    height: calc(100vh - 50px);
+    background-color: #f1f1f1;
+    /* display: flex; */
+}
+
+#extra-nav {
+    width: 100%;
+    line-height: 50px;
+    padding-left: 20px;
+}
+
+#maindiv {
+    width: 100%;
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: space-between;
+    background-color: #f1f1f1;
+}
+
+.sidebar {
+    width: 15%;
+    margin-left: 10px;
+    background-color: #f1f1f1;
+    border: 0.5px solid rgb(216, 214, 233);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 15px;
+}
+
+.sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    display: block;
+    font-family: sans-serif;
+}
+
+.sidebar a:hover {
+    color: #5a5fe2;
+    transform: scale(1.1);
+    transform-origin: left;
+}
+
+.separator {
+    background-color: #8b8ffe;
+    margin: 8px 12.8px;
+}
+
+#Patient-details {
+    width: 80%;
+    height: calc(100vh - 100px);
+    background-color: white;
+    /* border: 0.5px solid rgb(216, 214, 233); */
+    margin-bottom: 5px;
+    margin-right: 15px;
+}
+
+#button-nav {
+    width: 100%;
+    /* direction: rtl; */
+    text-align: right;
+    line-height: 53px;
+    background-color: #f1f1f1;
+}
+
+#content {
+    width: 100%;
+    height: calc(100vh - 154px);
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    /* padding: 5px; */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-right: 15px;
+}
+
+.profile {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(216, 214, 233);
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+}
+
+.contactpreference {
+    width: 100%;
+    height: 270px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(216, 214, 233);
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+}
+.profile1 {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(216, 214, 233);
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+}
+
+.details {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+    /* border: 0.5px solid rgb(216, 214, 233); */
+    border-radius: 5px;
+    background-color: white;
+}
+.contact_details{
+    width: 100%;
+    height: 270px;
+    margin-bottom: 20px;
+    /* border: 0.5px solid rgb(216, 214, 233); */
+    border-radius: 5px;
+    background-color: white;
+}
+
+.Twoforms {
+    width: 100%;
+    height: 335px;
+    padding-bottom: 5px;
+    /* border: 0.5px solid rgb(216, 214, 233); */
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+label .Address{
+    width:140px;
+    color: black;
+    
+}
+.Table{
+    width: 97%;
+    border-radius: 5px;
+    background-color:white;
+    margin: auto;
+    /* padding-bottom: 20px; */
+}
+table {
+    font-family: arial, sans-serif;
+    font-size: 13px;
+    border-collapse: collapse;
+    width: 100%;
+    height: 200px;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+td select{
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 40%;
+    justify-content: center;
+}
+
+.leftform {
+    width: 49%;
+  
+}
+#leftformheight{
+    height:330px;
+}
+#leftformheight label{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.rightform {
+    width: 49%;
+}
+
+.profile h4,h5 {
+    width: 100%;
+    height: 25px;
+    margin-top: 5px;
+    padding-left: 15px;
+    color: #627d98;
+}
+.contact_details h4{
+    width: 100%;
+    height: 25px;
+    margin-top: 5px;
+    padding-left: 15px;
+    color: #627d98;
+}
+
+.profile1 h4{
+    width: 100%;
+    line-height: 50px;
+    padding-left: 15px;
+    color: #627d98;
+}
+
+#sameline {
+    display: flex;
+}
+
+.block {
+    width: 100%;
+    height: 50px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.block select{
+    width: 110px;
+}
+
+.block label {
+    padding-bottom: 15px;
+    color: black;
+}
+
+.column {
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    background-color: white;
+    /* border: 0.5px solid rgb(216, 214, 233); */
+    border-radius: 5px;
+}
+
+.column img {
+    width: 30%;
+    height: 25%;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.column p {
+    font-size: 20px;
+    font-weight: 900;
+    color: gray;
+}
+
+#rightbar {
+    width: 3.5%;
+    background-color: white;
+    justify-content: center;
+}
+
+#rightbar a {
+    padding-left: 15px;
+    /* justify-content: center; */
+    text-align: center;
+    text-decoration: none;
+    color: #627d98;
+    font-size: 23px;
+    margin-bottom: 2px;
+}
+
+#rightbar p {
+    text-align: center;
+    text-decoration: none;
+    color: #627d98;
+    font-size: 14px;
+    font-style: bold;
+}
+
+#button-nav label {
+    margin-right: 5px;
+    font-size: 14px;
+    color: black;
+}
+
+.buttons {
+    margin-left: 7px;
+    border: 0.5px solid green;
+    padding: 2px 5px 2px 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    font-size: 14px;
+}
+
+.save {
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 2px 9px 2px 9px;
+}
+
+.buttons:hover {
+    background-color: #f1f1f1;
+}
+
+.profileform {
+    height: 250px;
+    /* padding-top: 15px; */
+
+}
+button{
+    text-decoration: none;
+    border: none;
+}
+.profileform input[type=text] {
+    width: auto;
+    padding-left: 15px;
+    margin: 5px;
+    /*display: inline-block;*/
+    border:  0.5px solid rgb(216, 214, 233); ;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
+.profileform select,
+input[type=date] {
+    width: 170px;
+    padding-left: 15px;
+    margin: 5px;
+    margin-bottom: 10px;
+    border:  0.5px solid rgb(216, 214, 233); ;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.profileform input[type=checkbox] {
+    width: 170px;
+    text-align: left;
+    margin-bottom: 10px;
+    border: 0.5px solid rgb(216, 214, 233); ;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#interpreter{
+    align-items: left;
+}
+#addrisk {
+    display: block;
+}
+
+.profileform span {
+    margin-left: 40px;
+}
+
+.profileform label {
+    font-size: 14px;
+    color: black;
+    margin-bottom: 10px;
+    font-weight: 400;
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+
+#formTwo {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 400px;
+}
+
+.form2{
+    height: 400px;
+    padding:5px;
+    border: 0.5px solid rgb(216, 214, 233); ;
+    background-color: #ffffff;
+}
+
+.contact-header{
+    display: flex;
+}
+
+.address1 select,h3{
+    font-size: 16px;
+}
+
+.address-container{
+    display:flex;
+    
+}
+fieldset{
+    padding-left: 5px;
+    margin-bottom:20px;
+    height: 334px;
+    font-size: 16px;
+    border: 0.5px solid rgb(216, 214, 233);
+}
+.address-field-header h3{
+    width: 97.4%;
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-weight: 200;
+    display: inline-block;
+} 
+.phone h3{
+    display: inline-block;
+}
+
+.phone-header{
+    display: flex;
+}
+
+.type{
+    /* margin:1%; */
+    width: 15%;
+}
+.code{
+    /* margin:1%; */
+    width:10%;
+}
+.number{
+    /* margin:1%; */
+    width: 50%;
+}
+
+.phone-inputs{
+    display:flex;
+}
+.phone-inputs #delete{
+    width: 250px;
+   direction: rtl;
+}
+.type-input{
+    /* margin: 1%; */
+    width: 15%;
+}
+
+.code-input{
+    /* margin: 1%; */
+    width: 10%;
+}
+
+.number-input{
+    /* margin: 1%; */
+    width: 25%;
+}
