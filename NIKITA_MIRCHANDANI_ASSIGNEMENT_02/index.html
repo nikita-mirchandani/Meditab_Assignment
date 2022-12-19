@@ -49,14 +49,14 @@
 
                 </div>
                 <div id="right-icons">
-                    
-                        <input type="text" id="searchpatient"
+                    <form action="#">
+                        <input type="text" name="searchbox" id="searchpatient"
                             placeholder="&#128270; Search Patient - lname fname dob #ch" />
-                    
+                    </form>
 
-                    <a ><i class="fa-solid fa-calendar-week"></i></a>
-                    <a ><i class="fa-solid fa-circle-question"></i></a>
-                    <a ><i class="fa-solid fa-lock"></i></a>
+                    <a href="#about"><i class="fa-solid fa-calendar-week"></i></a>
+                    <a href="#about"><i class="fa-solid fa-circle-question"></i></a>
+                    <a href="#about"><i class="fa-solid fa-lock"></i></a>
 
 
                 </div>
@@ -104,57 +104,58 @@
                     <a href="#contact">Ledger</a>
                 </div>
                 <div id="Patient-details"><!--Patient-details: 1st button part and 2nd profile container whole-->
-                    <form id="patientDetailsForm">
                     <div id="button-nav">
-                        <!-- <button type="submit" onclick="savedata()" value="Submit">Submit</button> -->
-                            <input type="checkbox" id="active" value="active">
+                        <form id="checkbox">
+                            <input type="checkbox" id="active" name="active" value="active">
                             <label for="active"> Active</label>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                             <button onclick="reset()"><a class="buttons" >Re-verify</a></button>
                             <i class="fa-regular fa-circle-check" style="color:green"></i>
-                            <button type="button" class="buttons">Cancel Changes</button>
-                            <button type="submit" class="save">
-                            <i class="fa-sharp fa-solid fa-triangle-exclamation"></i> Save</button>      
-                                
-                        </div>
-                    <div id="content">    
+                            <a href="Cancel-changes" class="buttons">Cancel Changes</a>
+                            <a href="Save" class="save"><i class="fa-sharp fa-solid fa-triangle-exclamation"></i> Save
+                            </a>
+                        </form>
+                    </div>
+                    <div id="content">
+                        <form id="patientDetailsForm">
                             <div class="profile">
                                 <div class="column">
                                     <img src="images/profile.jpg" alt="profile">
                                     <p>PT0000000036</p>
                                     <div class="profileform">
-                                        <label for="prefix" >Prefix:</label>
+                                        <label for="prefix">Prefix:</label>
                                         <input type="text" id="prefix" name="prefix" />
                                         <br />
 
                                         <label for="fname">First Name:</label>
-                                        <input type="text" id="fname" name="fname" />
+                                        <input type="text" id="fname" name="firstname" />
                                         <br />
 
                                         <label for="mname">Middle Name:</label>
-                                        <input type="text" id="mname"  name="mname"/>
+                                        <input type="text" id="mname" name="middlename" />
                                         <br />
 
                                         <label for="lname">Last Name:</label>
-                                        <input type="text" id="lname"  name="lname"/>
+                                        <input type="text" id="lname" name="lastname" />
                                         <br />
 
                                         <label for="lname2">Last Name 2:</label>
-                                        <input type="text" id="lname2" name="lname2" />
+                                        <input type="text" id="lname2" name="lastname2" />
                                         <br />
 
                                         <label for="Suffix">Suffix:</label>
-                                        <input type="text" id="Suffix" name="Suffix"  />
+                                        <input type="text" id="Suffix" name="Suffix" />
                                         <br />
 
                                         <label for="aka">AKA:</label>
-                                        <input type="text" id="aka" name="aka"> <br />
+                                        <input type="text" id="aka" name="aka" />
+                                        <br />
                                     </div>
                                 </div>
                                 <div class="column">
                                     <div class="profileform" id="form2">
                                         <label for="sex">Sex*:</label>
-                                        <select name="sex">
+                                        <select>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
                                             <option value="Unknown">Unknown</option>
@@ -162,20 +163,20 @@
                                         <br />
                                         <label for="dob">DOB:</label>
                                         <input type="date" id="DOB" name="DOB" onchange="ageCalculator()"><br />
-                                        <span id="result" name="result"></span>
+                                        <span id="result"></span>
                                         <br />
                                         <label for="pref">Pref Language:</label>
-                                        <select name="pref">
+                                        <select>
                                             <option value="English">English</option>
                                             <option value="Hindi">Hindi</option>
                                             <option value="Gujarati">Gujarati</option>
                                         </select>
                                         <br />
                                         <label for="Interpreter">Interpreter:</label>
-                                        <input type="checkbox" name="interpreter" id="interpreter">
+                                        <input type="checkbox" id="interpreter">
                                         <br />
                                         <label for="status">Status:</label>
-                                        <select name="status" id="status" >
+                                        <select name="pref" id="pref">
                                             <option value=""></option>
                                             <option value="First">First Appointment Pending</option>
                                             <option value="Registration">Registration entry Pending</option>
@@ -185,24 +186,24 @@
                                             <i class="fa-solid fa-circle-plus" style="color: #627d98;"></i>Add
                                             Risk</label>
                                         <br />
-                                        <label for="maritalstatus" >Marital Status:</label>
-                                        <select name="maritalstatus" >
+                                        <label for="maritalstatus">Marital Status:</label>
+                                        <select>
                                             <option value="Married">Married</option>
                                             <option value="UnMarried">UnMarried</option>
                                             <option value="Divorced">Divorced</option>
                                             <option value="Unknown">Unknown</option>
                                         </select>
                                         <label for="ssn">SSN:</label>
-                                        <input type="text" id="ssn" name="ssn"/>
+                                        <input type="text" id="ssn" name="ssn" />
                                         <br />
                                         <label for="race">Race:</label>
-                                        <select name="race">
+                                        <select>
                                             <option value="White">White</option>
                                             <option value="Asian">Asian</option>
                                             <option value="African">African</option>
                                         </select>
                                         <label for="ethnicity">Ethnicity:</label>
-                                        <select name="ethnicity">
+                                        <select>
                                             <option value="Other Ethinicity">Other Ethnicity</option>
                                             <option value="Unreported/Refused to Report">Unreported/Refused to Report
                                             </option>
@@ -214,41 +215,41 @@
                                 <div class="column">
                                     <div class="profileform" id="formTwo">
                                         <label for="Self Pay">Self Pay:</label>
-                                        <input type="checkbox" id="Self Pay" name="Self Pay">
+                                        <input type="checkbox" id="Self Pay">
                                         <br />
                                         <label for="facility">Default Facility:</label>
-                                        <select name="facility">
+                                        <select>
                                             <option value="(FACFRE)CMC Fresno">(FACFRE) CMC Fresno</option>
                                             <option value="(FAC8) Aviral">(FAC8) Aviral</option>
                                             <option value="(fac13) Facility">(fac13) Facility</option>
                                         </select>
                                         <label for="provider">Default Provider:</label>
-                                        <select name="provider">
+                                        <select>
                                             <option value="Jones, Charlie | 1558444216">Jones, Charlie | 1558444216
                                             </option>
                                         </select>
                                         <label for="timezone">Timezone:</label>
-                                        <select name="timezone">
+                                        <select>
                                             <option value="(UTC-09:00) AKST - America...">(UTC-09:00) AKST - America...
                                             </option>
                                         </select>
                                         <label for="pharmacy">Default Pharmacy:</label>
-                                        <select name="pharmacy">
+                                        <select>
                                             <option value=""></option>
                                         </select>
-                                        <a ><i class="fa-solid fa-list"></i></a>
+                                        <a href=""><i class="fa-solid fa-list"></i></a>
                                         <label>Use current pharmacy for all Rx:</label>
-                                        <input type="checkbox" id="current pharmacy" name="current pharmacy">
+                                        <input type="checkbox" id="current pharmacy">
                                         <br />
                                         <label>PCP Same As Provider:</label>
-                                        <input type="checkbox" id="PCP" name="PCP checkbox">
+                                        <input type="checkbox" id="PCP">
                                         <br />
                                         <label>PCP :</label>
-                                        <select name="PCP">
+                                        <select>
                                             <option value=""></option>
                                         </select>
                                         <label>Fee Schedule :</label>
-                                        <select name="Fee Schedule">
+                                        <select>
                                             <option value=""></option>
                                         </select>
                                         <br />
@@ -266,7 +267,7 @@
                                             <div id="leftformheight">
                                                 <fieldset>
                                                     <legend>
-                                                        <select  id="HW" name="HW">
+                                                        <select name="" id="">
                                                             <option value="">Home</option>
                                                             <option value="">Work</option>
                                                         </select>
@@ -276,27 +277,27 @@
                                                             style="color: #627d98;"></i>
                                                     </div>
                                                     <label for="Street">Street</label><br />
-                                                    <input type="text" name="Street"><br />
+                                                    <input type="text"><br />
                                                     <div id="sameline">
                                                         <div class="block">
                                                             <label for="zip">Zip</label><br />
-                                                            <input type="text" id="zip" name="zip">
+                                                            <input type="text" id="zip">
                                                         </div>
                                                         <div class="block">
                                                             <label for="City">City</label><br />
-                                                            <input type="text" id="city" name="city">
+                                                            <input type="text" id="city">
                                                         </div>
                                                         <div class="block">
                                                             <label for="State">State</label><br />
-                                                            <select id="state" name="state">
+                                                            <select id="state">
                                                                 <option value=""></option>
                                                                 <option value="(AL) ALABAMA">(AL) ALABAMA</option>
                                                             </select>
                                                         </div>
                                                         <!-- <fieldset></fieldset> -->
                                                         <div class="block">
-                                                            <label for="Country" >Country</label><br />
-                                                            <select id="country" name="country">
+                                                            <label for="Country">Country</label><br />
+                                                            <select id="country">
                                                                 <option value="US">US</option>
                                                                 <option value="PR">PR</option>
                                                             </select>
@@ -316,15 +317,15 @@
                                                         </div>
                                                         <hr>
                                                         <div class="phone-inputs">
-                                                            <select  id="type" name="type" class="type-input">
+                                                            <select name="type" id="type" class="type-input">
                                                                 <option value="Cell">Cell</option>
                                                                 <option value="Landline">Landline</option>
                                                             </select>
-                                                            <select  id="code" name="code" class="code-input">
+                                                            <select name="code" id="code" class="code-input">
                                                                 <option value="+1">+1</option>
                                                                 <option value="+91">+91</option>
                                                             </select>
-                                                            <input type="text"  id="number" name="number"
+                                                            <input type="text" name="number" id="number"
                                                                 class="number-input">
                                                             <div id="delete"><i class="fa-solid fa-trash"
                                                                     style="color: #627d98;"></i></div>
@@ -344,7 +345,7 @@
                                             <div id="leftformheight">
                                                 <fieldset>
                                                     <legend>
-                                                        <select id="HW" name="HW2">
+                                                        <select name="" id="">
                                                             <option value="">Work</option>
                                                             <option value="">Home</option>
                                                         </select>
@@ -354,26 +355,26 @@
                                                             style="color: #627d98;"></i>
                                                     </div>
                                                     <label for="Street">Street</label><br />
-                                                    <input type="text" id="Street" name="Street2"><br />
+                                                    <input type="text"><br />
                                                     <div id="sameline">
                                                         <div class="block">
-                                                            <label>Zip</label><br />
-                                                            <input type="text" id="zip" name="zip2">
+                                                            <label for="zip">Zip</label><br />
+                                                            <input type="text" id="zip">
                                                         </div>
                                                         <div class="block">
                                                             <label for="City">City</label><br />
-                                                            <input type="text" id="city" name="city2">
+                                                            <input type="text" id="city">
                                                         </div>
                                                         <div class="block">
                                                             <label for="State">State</label><br />
-                                                            <select id="state" name="state2">
+                                                            <select id="state">
                                                                 <option value=""></option>
                                                                 <option value="(AL) ALABAMA">(AL) ALABAMA</option>
                                                             </select>
                                                         </div>
                                                         <div class="block">
-                                                            <label for="Country" >Country</label><br />
-                                                            <select id="country" name="country2">
+                                                            <label for="Country">Country</label><br />
+                                                            <select id="country">
                                                                 <option value="US">US</option>
                                                                 <option value="PR">PR</option>
                                                             </select>
@@ -393,16 +394,16 @@
                                                         </div>
                                                         <hr>
                                                         <div class="phone-inputs">
-                                                            <select  id="type" name="type2" class="type-input">
+                                                            <select name="type" id="type" class="type-input">
                                                                 <option value="Cell">Cell</option>
                                                                 <option value="Landline">Landline</option>
                                                             </select>
-                                                            <select id="code" name="code2" class="code-input">
+                                                            <select name="code" id="code" class="code-input">
                                                                 <option value="+1">+1</option>
                                                                 <option value="+91">+91</option>
                                                             </select>
-                                                            <input type="text"  id="number" name="number2"
-                                                                class="number-input" required>
+                                                            <input type="text" name="number" id="number"
+                                                                class="number-input">
                                                             <div id="delete"><i class="fa-solid fa-trash"
                                                                     style="color: #627d98;"></i></div>
                                                         </div>
@@ -489,11 +490,24 @@
                             <div class="profile1">
                                 <h4><i class="fa-solid fa-circle-plus" style="color: #627d98;"></i> Other Details</h4>
                             </div>
-                       
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
+        </div>
+        <div id="rightbar">
+            <a href=""><i class="fa-solid fa-fax"></i></a>
+            <p>4</p>
+            <a href=""><i class="fa-solid fa-comment-dots"></i></a>
+            <p>0</p>
+            <a href=""><i class="fa-sharp fa-solid fa-envelope"></i></a>
+            <p>4</p>
+            <a href=""><i class="fa-solid fa-voicemail"></i></a>
+            <p>0</p>
+            <a href=""><i class="fa-solid fa-rectangle-list"></i></a>
+            <p>0</p>
+            <a href=""><i class="fa-solid fa-list-check"></i></a>
+            <a href=""><i class="fa-solid fa-note-sticky"></i></a>
         </div>
     </div>
 </body>
