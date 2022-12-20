@@ -519,9 +519,6 @@ fieldset{
     color:#243b53;
     display: inline-block;
 } 
-.phone {
-    /* display: inline-block; */
-}
 
 .phone-header{
     display: flex;
