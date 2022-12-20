@@ -1,8 +1,9 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family:  arial,sans-serif;
     box-sizing: border-box;
+    color: #486581;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -127,7 +128,7 @@
 }
 
 .sidebar {
-    width: 15%;
+    width: 12%;
     margin-left: 10px;
     background-color: #f1f1f1;
     border: 0.5px solid rgb(216, 214, 233);
@@ -142,7 +143,7 @@
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 15px;
-    color: black;
+    color: #0A2644;
     display: block;
     font-family: sans-serif;
 }
@@ -159,7 +160,7 @@
 }
 
 #Patient-details {
-    width: 80%;
+    width: 84%;
     height: calc(100vh - 100px);
     background-color: white;
     /* border: 0.5px solid rgb(216, 214, 233); */
@@ -246,7 +247,7 @@
 }
 label .Address{
     width:140px;
-    color: black;
+     color: #486581;
     
 }
 .Table{
@@ -283,9 +284,9 @@ td select{
     height:330px;
 }
 #leftformheight label{
-    margin-top: 10px;
-    margin-bottom: 20px;
-    color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #486581;
 }
 
 .rightform {
@@ -316,21 +317,23 @@ td select{
 
 #sameline {
     display: flex;
+    /* margin-right: 5px; */
 }
 
 .block {
     width: 100%;
     height: 50px;
-    padding-left: 2px;
-    padding-right: 2px;
+    margin-left: 2px;
+    margin-right: 6px;
 }
-.block select{
-    width: 110px;
+.block input,select{
+    width: 130px;
+    margin-top: 5px;
 }
 
 .block label {
-    padding-bottom: 15px;
-    color: black;
+     color: #486581;
+     margin-bottom: 5px;
 }
 
 .column {
@@ -353,7 +356,7 @@ td select{
 .column p {
     font-size: 20px;
     font-weight: 900;
-    color: gray;
+     color: #486581;
 }
 
 #rightbar {
@@ -442,16 +445,16 @@ input[type=date] {
 }
 
 .profileform input[type=checkbox] {
-    width: 170px;
+    width: 60px;
+    margin-right: 150px;
     text-align: left;
     margin-bottom: 10px;
     border: 0.5px solid rgb(216, 214, 233); ;
     border-radius: 4px;
     box-sizing: border-box;
 }
-#interpreter{
-    align-items: left;
-}
+
+
 #addrisk {
     display: block;
 }
@@ -461,12 +464,12 @@ input[type=date] {
 }
 
 .profileform label {
-    font-size: 14px;
-    color: black;
+    font-size: 13px;
+     color: #486581;
     margin-bottom: 10px;
     font-weight: 400;
     display: inline-block;
-    width: 150px;
+    width: 140px;
     text-align: right;
 }
 
@@ -488,7 +491,7 @@ input[type=date] {
 }
 
 .address1 select,h3{
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .address-container{
@@ -499,18 +502,25 @@ fieldset{
     padding-left: 5px;
     margin-bottom:20px;
     height: 334px;
-    font-size: 16px;
+    font-size: 13px;
     border: 0.5px solid rgb(216, 214, 233);
 }
+#streetwidth{
+    width: 70%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
 .address-field-header h3{
+    padding-top: 5px;
     width: 97.4%;
     padding-bottom: 10px;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 200;
+    color:#243b53;
     display: inline-block;
 } 
-.phone h3{
-    display: inline-block;
+.phone {
+    /* display: inline-block; */
 }
 
 .phone-header{
@@ -518,36 +528,51 @@ fieldset{
 }
 
 .type{
-    /* margin:1%; */
+    margin-right:5px;
+    margin-top:5px;
+    margin-bottom:5px;
     width: 15%;
 }
 .code{
-    /* margin:1%; */
+    margin:5px;
     width:10%;
 }
 .number{
-    /* margin:1%; */
+    margin:5px;
     width: 50%;
 }
+#contact-bottom-details label{
+    display: inline-block;
 
+}
 .phone-inputs{
     display:flex;
 }
 .phone-inputs #delete{
     width: 250px;
    direction: rtl;
+   margin: 5px;
+}
+.trash{
+    display: inline-block;
+    margin-left: 15px; 
 }
 .type-input{
-    /* margin: 1%; */
     width: 15%;
+    height: 20px;
+    margin-right:5px;
+    margin-top:5px;
+    margin-bottom:5px;
 }
 
 .code-input{
     /* margin: 1%; */
     width: 10%;
+    height: 20px;
 }
 
 .number-input{
-    /* margin: 1%; */
+    margin: 5px;
     width: 25%;
+    height: 20px;
 }

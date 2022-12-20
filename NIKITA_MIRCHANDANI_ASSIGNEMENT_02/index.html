@@ -173,7 +173,7 @@
                                         </select>
                                         <br />
                                         <label for="Interpreter">Interpreter:</label>
-                                        <input type="checkbox" id="interpreter">
+                                        <input type="checkbox" id="interpreter" name="interpreter">
                                         <br />
                                         <label for="status">Status:</label>
                                         <select name="pref" id="pref">
@@ -277,7 +277,7 @@
                                                             style="color: #627d98;"></i>
                                                     </div>
                                                     <label for="Street">Street</label><br />
-                                                    <input type="text"><br />
+                                                    <input type="text" id="streetwidth"><br />
                                                     <div id="sameline">
                                                         <div class="block">
                                                             <label for="zip">Zip</label><br />
@@ -331,13 +331,18 @@
                                                                     style="color: #627d98;"></i></div>
                                                         </div>
                                                     </div>
-                                                    <label>Fax <i class="fa-solid fa-circle-plus"
+                                                    <div id="contact-bottom-details">
+                                                    <label >Fax <i class="fa-solid fa-circle-plus"
                                                             style="color: #627d98;"></i></label> <br />
                                                     <label>Email <i class="fa-solid fa-circle-plus"
                                                             style="color: #627d98;"></i></label> <br />
+                                                            <input type="text" id="streetwidth">
+                                                             <div class="trash"><i class="fa-solid fa-trash"
+                                                                style="color: #627d98;"></i></div>
+                                                                <br />
                                                     <label>Website <i class="fa-solid fa-circle-plus"
                                                             style="color: #627d98;"></i></label> <br />
-
+                                                    
                                                 </fieldset>
                                             </div>
                                         </div>
@@ -355,7 +360,7 @@
                                                             style="color: #627d98;"></i>
                                                     </div>
                                                     <label for="Street">Street</label><br />
-                                                    <input type="text"><br />
+                                                    <input type="text" id="streetwidth"><br />
                                                     <div id="sameline">
                                                         <div class="block">
                                                             <label for="zip">Zip</label><br />
@@ -372,6 +377,7 @@
                                                                 <option value="(AL) ALABAMA">(AL) ALABAMA</option>
                                                             </select>
                                                         </div>
+                                                        <!-- <fieldset></fieldset> -->
                                                         <div class="block">
                                                             <label for="Country">Country</label><br />
                                                             <select id="country">
@@ -394,27 +400,32 @@
                                                         </div>
                                                         <hr>
                                                         <div class="phone-inputs">
-                                                            <select name="type" id="type" class="type-input">
-                                                                <option value="Cell">Cell</option>
-                                                                <option value="Landline">Landline</option>
+                                                            <select name="type1" id="type" class="type-input">
+                                                                <option value="Cell1">Cell</option>
+                                                                <option value="Landline1">Landline</option>
                                                             </select>
-                                                            <select name="code" id="code" class="code-input">
+                                                            <select name="code1" id="code" class="code-input">
                                                                 <option value="+1">+1</option>
                                                                 <option value="+91">+91</option>
                                                             </select>
-                                                            <input type="text" name="number" id="number"
+                                                            <input type="text" name="number1" id="number"
                                                                 class="number-input">
                                                             <div id="delete"><i class="fa-solid fa-trash"
                                                                     style="color: #627d98;"></i></div>
                                                         </div>
                                                     </div>
-                                                    <label>Fax <i class="fa-solid fa-circle-plus"
+                                                    <div id="contact-bottom-details">
+                                                    <label >Fax <i class="fa-solid fa-circle-plus"
                                                             style="color: #627d98;"></i></label> <br />
                                                     <label>Email <i class="fa-solid fa-circle-plus"
                                                             style="color: #627d98;"></i></label> <br />
+                                                            <input type="text" id="streetwidth">
+                                                             <div class="trash"><i class="fa-solid fa-trash"
+                                                                style="color: #627d98;"></i></div>
+                                                                <br />
                                                     <label>Website <i class="fa-solid fa-circle-plus"
                                                             style="color: #627d98;"></i></label> <br />
-
+                                                    
                                                 </fieldset>
                                             </div>
                                         </div>
