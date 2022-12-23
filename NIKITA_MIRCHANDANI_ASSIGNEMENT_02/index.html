@@ -153,7 +153,7 @@
                                     </div>
                                 </div>
                                 <div class="column">
-                                    <div class="profileform" id="form2">
+                                    <div class="profileform">
                                         <label for="sex">Sex*:</label>
                                         <select>
                                             <option value="Male">Male</option>
@@ -163,7 +163,7 @@
                                         <br />
                                         <label for="dob">DOB:</label>
                                         <input type="date" id="DOB" name="DOB" onchange="ageCalculator()"><br />
-                                        <span id="result"></span>
+                                        <span id="result">0 Y, 0 M, 0D</span>
                                         <br />
                                         <label for="pref">Pref Language:</label>
                                         <select>
@@ -187,21 +187,24 @@
                                             Risk</label>
                                         <br />
                                         <label for="maritalstatus">Marital Status:</label>
-                                        <select>
+                                        <select name="maritalstatus" id="maritalstatus">
                                             <option value="Married">Married</option>
                                             <option value="UnMarried">UnMarried</option>
                                             <option value="Divorced">Divorced</option>
                                             <option value="Unknown">Unknown</option>
                                         </select>
+                                        <br />
+                            
                                         <label for="ssn">SSN:</label>
                                         <input type="text" id="ssn" name="ssn" />
                                         <br />
                                         <label for="race">Race:</label>
-                                        <select>
+                                        <select name="race" id="race">
                                             <option value="White">White</option>
                                             <option value="Asian">Asian</option>
                                             <option value="African">African</option>
                                         </select>
+                                        <br />
                                         <label for="ethnicity">Ethnicity:</label>
                                         <select>
                                             <option value="Other Ethinicity">Other Ethnicity</option>
@@ -213,7 +216,7 @@
                                     </div>
                                 </div>
                                 <div class="column">
-                                    <div class="profileform" id="formTwo">
+                                    <div class="profileform">
                                         <label for="Self Pay">Self Pay:</label>
                                         <input type="checkbox" id="Self Pay">
                                         <br />
@@ -223,21 +226,25 @@
                                             <option value="(FAC8) Aviral">(FAC8) Aviral</option>
                                             <option value="(fac13) Facility">(fac13) Facility</option>
                                         </select>
+                                        <br />
                                         <label for="provider">Default Provider:</label>
                                         <select>
                                             <option value="Jones, Charlie | 1558444216">Jones, Charlie | 1558444216
                                             </option>
                                         </select>
+                                        <br />
                                         <label for="timezone">Timezone:</label>
                                         <select>
                                             <option value="(UTC-09:00) AKST - America...">(UTC-09:00) AKST - America...
                                             </option>
                                         </select>
+                                        <br />
                                         <label for="pharmacy">Default Pharmacy:</label>
                                         <select>
                                             <option value=""></option>
                                         </select>
                                         <a href=""><i class="fa-solid fa-list"></i></a>
+                                        <br />
                                         <label>Use current pharmacy for all Rx:</label>
                                         <input type="checkbox" id="current pharmacy">
                                         <br />
@@ -248,6 +255,7 @@
                                         <select>
                                             <option value=""></option>
                                         </select>
+                                        <br/>
                                         <label>Fee Schedule :</label>
                                         <select>
                                             <option value=""></option>
