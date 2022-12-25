@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <header>
+    <header> <!--header : 50px-->
         <div class="mainheader">
             <div id="logo"></div>
             <div class="nav-icons">
@@ -62,17 +62,17 @@
                 </div>
             </div>
             <div id="account">
-                <i class="fa-solid fa-circle-user"></i>
+                <p><i class="fa-solid fa-circle-user"></i></p>
             </div>
         </div>
     </header>
 
-    <div id="main-div-nav"><!--main div : 1st container and 2nd rightbar-->
+    <div id="main-div-nav"><!--main div(height:100vh-50px) : 1st container and 2nd rightbar-->
         <!-- 1st part -->
         <div id="container">
             <!--container : 1st extra-nav/Patient-bar(height 50px) and 2nd part is maindiv(consists of scrollbar and content) -->
             <div id="extra-nav">Patient-Bar</div>
-            <div id="maindiv"><!--maindiv: 1st sidebar and 2nd Patient-detail comtainer-->
+            <div id="maindiv"><!--maindiv(height: 100vh-100px): 1st sidebar and 2nd Patient-detail container-->
                 <div class="sidebar">
                     <a href="#about">Dashboard</a>
                     <a href="#services">Demographics</a>
@@ -109,7 +109,7 @@
                             <input type="checkbox" id="active" name="active" value="active">
                             <label for="active"> Active</label>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
-                            <button onclick="reset()"><a class="buttons" >Re-verify</a></button>
+                            <button onclick="reset()"><a class="buttons">Re-verify</a></button>
                             <i class="fa-regular fa-circle-check" style="color:green"></i>
                             <a href="Cancel-changes" class="buttons">Cancel Changes</a>
                             <a href="Save" class="save"><i class="fa-sharp fa-solid fa-triangle-exclamation"></i> Save
@@ -122,143 +122,143 @@
                                 <div class="column">
                                     <img src="images/profile.jpg" alt="profile">
                                     <p>PT0000000036</p>
-                                        <label for="prefix">Prefix:</label>
-                                        <input type="text" id="prefix" name="prefix" />
-                                        <br />
+                                    <label for="prefix">Prefix:</label>
+                                    <input type="text" id="prefix" name="prefix" />
+                                    <br />
 
-                                        <label for="fname">First Name:</label>
-                                        <input type="text" id="fname" name="firstname" />
-                                        <br />
+                                    <label for="fname">First Name:</label>
+                                    <input type="text" id="fname" name="firstname" />
+                                    <br />
 
-                                        <label for="mname">Middle Name:</label>
-                                        <input type="text" id="mname" name="middlename" />
-                                        <br />
+                                    <label for="mname">Middle Name:</label>
+                                    <input type="text" id="mname" name="middlename" />
+                                    <br />
 
-                                        <label for="lname">Last Name:</label>
-                                        <input type="text" id="lname" name="lastname" />
-                                        <br />
+                                    <label for="lname">Last Name:</label>
+                                    <input type="text" id="lname" name="lastname" />
+                                    <br />
 
-                                        <label for="lname2">Last Name 2:</label>
-                                        <input type="text" id="lname2" name="lastname2" />
-                                        <br />
+                                    <label for="lname2">Last Name 2:</label>
+                                    <input type="text" id="lname2" name="lastname2" />
+                                    <br />
 
-                                        <label for="Suffix">Suffix:</label>
-                                        <input type="text" id="Suffix" name="Suffix" />
-                                        <br />
+                                    <label for="Suffix">Suffix:</label>
+                                    <input type="text" id="Suffix" name="Suffix" />
+                                    <br />
 
-                                        <label for="aka">AKA:</label>
-                                        <input type="text" id="aka" name="aka" />
-                                        <br /> 
+                                    <label for="aka">AKA:</label>
+                                    <input type="text" id="aka" name="aka" />
+                                    <br />
                                 </div>
                                 <div class="column">
-                                        <label for="sex">Sex*:</label>
-                                        <select>
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
-                                            <option value="Unknown">Unknown</option>
-                                        </select>
-                                        <br />
-                                        <label for="dob">DOB:</label>
-                                        <input type="date" id="DOB" name="DOB" onchange="ageCalculator()"><br />
-                                        <span id="result">0 Y, 0 M, 0D</span>
-                                        <br />
-                                        <label for="pref">Pref Language:</label>
-                                        <select>
-                                            <option value="English">English</option>
-                                            <option value="Hindi">Hindi</option>
-                                            <option value="Gujarati">Gujarati</option>
-                                        </select>
-                                        <br />
-                                        <label for="Interpreter">Interpreter:</label>
-                                        <input type="checkbox" id="interpreter" name="interpreter">
-                                        <br />
-                                        <label for="status">Status:</label>
-                                        <select name="pref" id="pref">
-                                            <option value=""></option>
-                                            <option value="First">First Appointment Pending</option>
-                                            <option value="Registration">Registration entry Pending</option>
-                                        </select>
-                                        <br />
-                                        <label for="risk">Risk:
-                                            <i class="fa-solid fa-circle-plus" style="color: #627d98;"></i>Add
-                                            Risk</label>
-                                        <br />
-                                        <label for="maritalstatus">Marital Status:</label>
-                                        <select name="maritalstatus" id="maritalstatus">
-                                            <option value="Married">Married</option>
-                                            <option value="UnMarried">UnMarried</option>
-                                            <option value="Divorced">Divorced</option>
-                                            <option value="Unknown">Unknown</option>
-                                        </select>
-                                        <br />
-                            
-                                        <label for="ssn">SSN:</label>
-                                        <input type="text" id="ssn" name="ssn" />
-                                        <br />
-                                        <label for="race">Race:</label>
-                                        <select name="race" id="race">
-                                            <option value="White">White</option>
-                                            <option value="Asian">Asian</option>
-                                            <option value="African">African</option>
-                                        </select>
-                                        <br />
-                                        <label for="ethnicity">Ethnicity:</label>
-                                        <select>
-                                            <option value="Other Ethinicity">Other Ethnicity</option>
-                                            <option value="Unreported/Refused to Report">Unreported/Refused to Report
-                                            </option>
-                                            <option value="Hispanic/Latino">Hispanic/Latino</option>
-                                            <option value="Non-Hispanic/Latino">Non-Hispanic/Latino</option>
-                                        </select>
-                                    
+                                    <label for="sex">Sex*:</label>
+                                    <select>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Unknown">Unknown</option>
+                                    </select>
+                                    <br />
+                                    <label for="dob">DOB:</label>
+                                    <input type="date" id="DOB" name="DOB" onchange="ageCalculator()"><br />
+                                    <span id="result">0 Y, 0 M, 0D</span>
+                                    <br />
+                                    <label for="pref">Pref Language:</label>
+                                    <select>
+                                        <option value="English">English</option>
+                                        <option value="Hindi">Hindi</option>
+                                        <option value="Gujarati">Gujarati</option>
+                                    </select>
+                                    <br />
+                                    <label for="Interpreter">Interpreter:</label>
+                                    <input type="checkbox" id="interpreter" name="interpreter">
+                                    <br />
+                                    <label for="status">Status:</label>
+                                    <select name="pref" id="pref">
+                                        <option value=""></option>
+                                        <option value="First">First Appointment Pending</option>
+                                        <option value="Registration">Registration entry Pending</option>
+                                    </select>
+                                    <br />
+                                    <label for="risk">Risk:
+                                        <i class="fa-solid fa-circle-plus" style="color: #627d98;"></i>Add
+                                        Risk</label>
+                                    <br />
+                                    <label for="maritalstatus">Marital Status:</label>
+                                    <select name="maritalstatus" id="maritalstatus">
+                                        <option value="Married">Married</option>
+                                        <option value="UnMarried">UnMarried</option>
+                                        <option value="Divorced">Divorced</option>
+                                        <option value="Unknown">Unknown</option>
+                                    </select>
+                                    <br />
+
+                                    <label for="ssn">SSN:</label>
+                                    <input type="text" id="ssn" name="ssn" />
+                                    <br />
+                                    <label for="race">Race:</label>
+                                    <select name="race" id="race">
+                                        <option value="White">White</option>
+                                        <option value="Asian">Asian</option>
+                                        <option value="African">African</option>
+                                    </select>
+                                    <br />
+                                    <label for="ethnicity">Ethnicity:</label>
+                                    <select>
+                                        <option value="Other Ethinicity">Other Ethnicity</option>
+                                        <option value="Unreported/Refused to Report">Unreported/Refused to Report
+                                        </option>
+                                        <option value="Hispanic/Latino">Hispanic/Latino</option>
+                                        <option value="Non-Hispanic/Latino">Non-Hispanic/Latino</option>
+                                    </select>
+
                                 </div>
                                 <div class="column">
-                                    
-                                        <label for="Self Pay">Self Pay:</label>
-                                        <input type="checkbox" id="Self Pay">
-                                        <br />
-                                        <label for="facility">Default Facility:</label>
-                                        <select>
-                                            <option value="(FACFRE)CMC Fresno">(FACFRE) CMC Fresno</option>
-                                            <option value="(FAC8) Aviral">(FAC8) Aviral</option>
-                                            <option value="(fac13) Facility">(fac13) Facility</option>
-                                        </select>
-                                        <br />
-                                        <label for="provider">Default Provider:</label>
-                                        <select>
-                                            <option value="Jones, Charlie | 1558444216">Jones, Charlie | 1558444216
-                                            </option>
-                                        </select>
-                                        <br />
-                                        <label for="timezone">Timezone:</label>
-                                        <select>
-                                            <option value="(UTC-09:00) AKST - America...">(UTC-09:00) AKST - America...
-                                            </option>
-                                        </select>
-                                        <br />
-                                        <label for="pharmacy">Default Pharmacy:</label>
-                                        <select>
-                                            <option value=""></option>
-                                        </select>
-                                        <a href=""><i class="fa-solid fa-list"></i></a>
-                                        <br />
-                                        <label>Use current pharmacy for all Rx:</label>
-                                        <input type="checkbox" id="current pharmacy">
-                                        <br />
-                                        <label>PCP Same As Provider:</label>
-                                        <input type="checkbox" id="PCP">
-                                        <br />
-                                        <label>PCP :</label>
-                                        <select>
-                                            <option value=""></option>
-                                        </select>
-                                        <br/>
-                                        <label>Fee Schedule :</label>
-                                        <select>
-                                            <option value=""></option>
-                                        </select>
-                                        <br />
-                                    
+
+                                    <label for="Self Pay">Self Pay:</label>
+                                    <input type="checkbox" id="Self Pay">
+                                    <br />
+                                    <label for="facility">Default Facility:</label>
+                                    <select>
+                                        <option value="(FACFRE)CMC Fresno">(FACFRE) CMC Fresno</option>
+                                        <option value="(FAC8) Aviral">(FAC8) Aviral</option>
+                                        <option value="(fac13) Facility">(fac13) Facility</option>
+                                    </select>
+                                    <br />
+                                    <label for="provider">Default Provider:</label>
+                                    <select>
+                                        <option value="Jones, Charlie | 1558444216">Jones, Charlie | 1558444216
+                                        </option>
+                                    </select>
+                                    <br />
+                                    <label for="timezone">Timezone:</label>
+                                    <select>
+                                        <option value="(UTC-09:00) AKST - America...">(UTC-09:00) AKST - America...
+                                        </option>
+                                    </select>
+                                    <br />
+                                    <label for="pharmacy">Default Pharmacy:</label>
+                                    <select>
+                                        <option value=""></option>
+                                    </select>
+                                    <a href=""><i class="fa-solid fa-list"></i></a>
+                                    <br />
+                                    <label>Use current pharmacy for all Rx:</label>
+                                    <input type="checkbox" id="current pharmacy">
+                                    <br />
+                                    <label>PCP Same As Provider:</label>
+                                    <input type="checkbox" id="PCP">
+                                    <br />
+                                    <label>PCP :</label>
+                                    <select>
+                                        <option value=""></option>
+                                    </select>
+                                    <br />
+                                    <label>Fee Schedule :</label>
+                                    <select>
+                                        <option value=""></option>
+                                    </select>
+                                    <br />
+
                                 </div>
                             </div>
                             <div class="profile">
@@ -268,170 +268,160 @@
                                     <h5>Please set the preferences after adding the contact information, the section to
                                         set preference can be found below the contact section of the page.</h5>
                                     <div class="Twoforms">
-                                        <div class="leftform">
-                                            <div id="leftformheight">
-                                                <fieldset>
-                                                    <legend>
-                                                        <select name="" id="">
-                                                            <option value="">Home</option>
-                                                            <option value="">Work</option>
-                                                        </select>
-                                                    </legend>
-                                                    <div class="address-field-header">
-                                                        <h3>Address</h3><i class="fa-solid fa-trash"
-                                                            style="color: #627d98;"></i>
-                                                    </div>
-                                                    <label for="Street">Street</label><br />
-                                                    <input type="text" id="streetwidth"><br />
-                                                    <div id="sameline">
-                                                        <div class="block">
-                                                            <label for="zip">Zip</label><br />
-                                                            <input type="text" id="zip">
-                                                        </div>
-                                                        <div class="block">
-                                                            <label for="City">City</label><br />
-                                                            <input type="text" id="city">
-                                                        </div>
-                                                        <div class="block">
-                                                            <label for="State">State</label><br />
-                                                            <select id="state">
-                                                                <option value=""></option>
-                                                                <option value="(AL) ALABAMA">(AL) ALABAMA</option>
-                                                            </select>
-                                                        </div>
-                                                        <!-- <fieldset></fieldset> -->
-                                                        <div class="block">
-                                                            <label for="Country">Country</label><br />
-                                                            <select id="country">
-                                                                <option value="US">US</option>
-                                                                <option value="PR">PR</option>
-                                                            </select>
-                                                        </div>
-                                                        <div id="delete"><i class="fa-solid fa-trash"
-                                                                style="color: #627d98;"></i></div>
-                                                    </div>
-
-                                                    <div class="phone">
-                                                        <label>Phone <i class="fa-solid fa-circle-plus"
-                                                                style="color: #627d98;"></i></label> <br />
-                                                        <div class="phone-header">
-                                                            <p class="type">Type</p>
-                                                            <p class="code">Code</p>
-                                                            <p class="number">Number</p>
-                                                            <p class="">Ext</p>
-                                                        </div>
-                                                        <hr>
-                                                        <div class="phone-inputs">
-                                                            <select name="type" id="type" class="type-input">
-                                                                <option value="Cell">Cell</option>
-                                                                <option value="Landline">Landline</option>
-                                                            </select>
-                                                            <select name="code" id="code" class="code-input">
-                                                                <option value="+1">+1</option>
-                                                                <option value="+91">+91</option>
-                                                            </select>
-                                                            <input type="text" name="number" id="number"
-                                                                class="number-input">
-                                                            <div id="delete"><i class="fa-solid fa-trash"
-                                                                    style="color: #627d98;"></i></div>
-                                                        </div>
-                                                    </div>
-                                                    <label >Fax <i class="fa-solid fa-circle-plus"
-                                                            style="color: #627d98;"></i></label> <br />
-                                                    <label>Email <i class="fa-solid fa-circle-plus"
-                                                            style="color: #627d98;"></i></label> <br />
-                                                            <input type="text" id="streetwidth">
-                                                             <div class="trash"><i class="fa-solid fa-trash"
-                                                                style="color: #627d98;"></i></div>
-                                                                <br />
-                                                    <label>Website <i class="fa-solid fa-circle-plus"
-                                                            style="color: #627d98;"></i></label> <br />
-                                                   </fieldset>
+                                        <fieldset>
+                                            <legend>
+                                                <select name="" id="">
+                                                    <option value="">Home</option>
+                                                    <option value="">Work</option>
+                                                </select>
+                                            </legend>
+                                            <div class="address-field-header">
+                                                <h3>Address</h3><i class="fa-solid fa-trash"
+                                                    style="color: #627d98;"></i>
                                             </div>
-                                        </div>
-                                        <div class="rightform">
-                                            <div id="leftformheight">
-                                                <fieldset>
-                                                    <legend>
-                                                        <select name="" id="">
-                                                            <option value="">Work</option>
-                                                            <option value="">Home</option>
-                                                        </select>
-                                                    </legend>
-                                                    <div class="address-field-header">
-                                                        <h3>Address</h3><i class="fa-solid fa-trash"
-                                                            style="color: #627d98;"></i>
-                                                    </div>
-                                                    <label for="Street">Street</label><br />
-                                                    <input type="text" id="streetwidth"><br />
-                                                    <div id="sameline">
-                                                        <div class="block">
-                                                            <label for="zip">Zip</label><br />
-                                                            <input type="text" id="zip">
-                                                        </div>
-                                                        <div class="block">
-                                                            <label for="City">City</label><br />
-                                                            <input type="text" id="city">
-                                                        </div>
-                                                        <div class="block">
-                                                            <label for="State">State</label><br />
-                                                            <select id="state">
-                                                                <option value=""></option>
-                                                                <option value="(AL) ALABAMA">(AL) ALABAMA</option>
-                                                            </select>
-                                                        </div>
-                                                        <!-- <fieldset></fieldset> -->
-                                                        <div class="block">
-                                                            <label for="Country">Country</label><br />
-                                                            <select id="country">
-                                                                <option value="US">US</option>
-                                                                <option value="PR">PR</option>
-                                                            </select>
-                                                        </div>
-                                                        <div id="delete"><i class="fa-solid fa-trash"
-                                                                style="color: #627d98;"></i></div>
-                                                    </div>
+                                            <label for="Street">Street</label><br />
+                                            <input type="text" id="streetwidth"><br />
+                                            <div id="sameline">
+                                                <div class="block">
+                                                    <label for="zip">Zip</label><br />
+                                                    <input type="text" id="zip">
+                                                </div>
+                                                <div class="block">
+                                                    <label for="City">City</label><br />
+                                                    <input type="text" id="city">
+                                                </div>
+                                                <div class="block">
+                                                    <label for="State">State</label><br />
+                                                    <select id="state">
+                                                        <option value=""></option>
+                                                        <option value="(AL) ALABAMA">(AL) ALABAMA</option>
+                                                    </select>
+                                                </div>
 
-                                                    <div class="phone">
-                                                        <label>Phone <i class="fa-solid fa-circle-plus"
-                                                                style="color: #627d98;"></i></label> <br />
-                                                        <div class="phone-header">
-                                                            <p class="type">Type</p>
-                                                            <p class="code">Code</p>
-                                                            <p class="number">Number</p>
-                                                            <p class="">Ext</p>
-                                                        </div>
-                                                        <hr>
-                                                        <div class="phone-inputs">
-                                                            <select name="type1" id="type" class="type-input">
-                                                                <option value="Cell1">Cell</option>
-                                                                <option value="Landline1">Landline</option>
-                                                            </select>
-                                                            <select name="code1" id="code" class="code-input">
-                                                                <option value="+1">+1</option>
-                                                                <option value="+91">+91</option>
-                                                            </select>
-                                                            <input type="text" name="number1" id="number"
-                                                                class="number-input">
-                                                            <div id="delete"><i class="fa-solid fa-trash"
-                                                                    style="color: #627d98;"></i></div>
-                                                        </div>
-                                                    </div>
-                                                    <div id="contact-bottom-details">
-                                                    <label >Fax <i class="fa-solid fa-circle-plus"
-                                                            style="color: #627d98;"></i></label> <br />
-                                                    <label>Email <i class="fa-solid fa-circle-plus"
-                                                            style="color: #627d98;"></i></label> <br />
-                                                            <input type="text" id="streetwidth">
-                                                             <div class="trash"><i class="fa-solid fa-trash"
-                                                                style="color: #627d98;"></i></div>
-                                                                <br />
-                                                    <label>Website <i class="fa-solid fa-circle-plus"
-                                                            style="color: #627d98;"></i></label> <br />
-                                                    
-                                                </fieldset>
+                                                <div class="block">
+                                                    <label for="Country">Country</label><br />
+                                                    <select id="country">
+                                                        <option value="US">US</option>
+                                                        <option value="PR">PR</option>
+                                                    </select>
+                                                </div>
+                                                <div id="delete"><i class="fa-solid fa-trash"
+                                                        style="color: #627d98;"></i></div>
                                             </div>
-                                        </div>
+
+                                            <div class="phone">
+                                                <label>Phone <i class="fa-solid fa-circle-plus"
+                                                        style="color: #627d98;"></i></label> <br />
+                                                <div class="phone-header">
+                                                    <p class="type">Type</p>
+                                                    <p class="code">Code</p>
+                                                    <p class="number">Number</p>
+                                                    <p class="">Ext</p>
+                                                </div>
+                                                <hr>
+                                                <div class="phone-inputs">
+                                                    <select name="type" id="type" class="type-input">
+                                                        <option value="Cell">Cell</option>
+                                                        <option value="Landline">Landline</option>
+                                                    </select>
+                                                    <select name="code" id="code" class="code-input">
+                                                        <option value="+1">+1</option>
+                                                        <option value="+91">+91</option>
+                                                    </select>
+                                                    <input type="text" name="number" id="number" class="number-input">
+                                                    <div id="delete"><i class="fa-solid fa-trash"
+                                                            style="color: #627d98;"></i></div>
+                                                </div>
+                                            </div>
+                                            <label>Fax <i class="fa-solid fa-circle-plus"
+                                                    style="color: #627d98;"></i></label> <br />
+                                            <label>Email <i class="fa-solid fa-circle-plus"
+                                                    style="color: #627d98;"></i></label> <br />
+                                            <input type="text" id="streetwidth">
+                                            <div class="trash"><i class="fa-solid fa-trash" style="color: #627d98;"></i>
+                                            </div>
+                                            <br />
+                                            <label>Website <i class="fa-solid fa-circle-plus"
+                                                    style="color: #627d98;"></i></label> <br />
+                                        </fieldset>
+                                        <fieldset>
+                                            <legend>
+                                                <select name="" id="">
+                                                    <option value="">Work</option>
+                                                    <option value="">Home</option>
+                                                </select>
+                                            </legend>
+                                            <div class="address-field-header">
+                                                <h3>Address</h3><i class="fa-solid fa-trash"
+                                                    style="color: #627d98;"></i>
+                                            </div>
+                                            <label for="Street">Street</label><br />
+                                            <input type="text" id="streetwidth"><br />
+                                            <div id="sameline">
+                                                <div class="block">
+                                                    <label for="zip">Zip</label><br />
+                                                    <input type="text" id="zip">
+                                                </div>
+                                                <div class="block">
+                                                    <label for="City">City</label><br />
+                                                    <input type="text" id="city">
+                                                </div>
+                                                <div class="block">
+                                                    <label for="State">State</label><br />
+                                                    <select id="state">
+                                                        <option value=""></option>
+                                                        <option value="(AL) ALABAMA">(AL) ALABAMA</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="block">
+                                                    <label for="Country">Country</label><br />
+                                                    <select id="country">
+                                                        <option value="US">US</option>
+                                                        <option value="PR">PR</option>
+                                                    </select>
+                                                </div>
+                                                <div id="delete"><i class="fa-solid fa-trash"
+                                                        style="color: #627d98;"></i></div>
+                                            </div>
+
+                                            <div class="phone">
+                                                <label>Phone <i class="fa-solid fa-circle-plus"
+                                                        style="color: #627d98;"></i></label> <br />
+                                                <div class="phone-header">
+                                                    <p class="type">Type</p>
+                                                    <p class="code">Code</p>
+                                                    <p class="number">Number</p>
+                                                    <p class="">Ext</p>
+                                                </div>
+                                                <hr>
+                                                <div class="phone-inputs">
+                                                    <select name="type1" id="type" class="type-input">
+                                                        <option value="Cell1">Cell</option>
+                                                        <option value="Landline1">Landline</option>
+                                                    </select>
+                                                    <select name="code1" id="code" class="code-input">
+                                                        <option value="+1">+1</option>
+                                                        <option value="+91">+91</option>
+                                                    </select>
+                                                    <input type="text" name="number1" id="number" class="number-input">
+                                                    <div id="delete"><i class="fa-solid fa-trash"
+                                                            style="color: #627d98;"></i></div>
+                                                </div>
+                                            </div>
+                                            <div id="contact-bottom-details">
+                                                <label>Fax <i class="fa-solid fa-circle-plus"
+                                                        style="color: #627d98;"></i></label> <br />
+                                                <label>Email <i class="fa-solid fa-circle-plus"
+                                                        style="color: #627d98;"></i></label> <br />
+                                                <input type="text" id="streetwidth">
+                                                <div class="trash"><i class="fa-solid fa-trash"
+                                                        style="color: #627d98;"></i></div>
+                                                <br />
+                                                <label>Website <i class="fa-solid fa-circle-plus"
+                                                        style="color: #627d98;"></i></label> <br />
+
+                                        </fieldset>
                                     </div>
                                 </div>
                             </div>
@@ -509,6 +499,7 @@
                 </div>
             </div>
         </div>
+        <!-- 2nd part -->
         <div id="rightbar">
             <a href=""><i class="fa-solid fa-fax"></i></a>
             <p>4</p>
