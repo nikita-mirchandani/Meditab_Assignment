@@ -218,7 +218,6 @@
     background-color: white;
     display: flex;
 }
-
 .contactpreference {
     width: 100%;
     height: 270px;
@@ -228,16 +227,6 @@
     background-color: white;
     display: flex;
 }
-.profile1 {
-    width: 100%;
-    height: 50px;
-    margin-bottom: 20px;
-    border: 1px solid rgb(216, 214, 233);
-    border-radius: 5px;
-    background-color: white;
-    display: flex;
-}
-
 .details {
     width: 100%;
     height: 400px;
@@ -331,14 +320,6 @@ td select{
     padding-left: 15px;
     color: #627d98;
 }
-
-.profile1 h4{
-    width: 100%;
-    line-height: 50px;
-    padding-left: 15px;
-    color: #627d98;
-}
-
 #sameline {
     display: flex;
     /* margin-right: 5px; */
@@ -463,6 +444,17 @@ button{
     box-sizing: border-box;
 
 }
+textarea{
+    width: 170px;
+    resize: vertical;
+   
+    /* padding-left: 15px; */
+    border:  0.5px solid rgb(216, 214, 233); ;
+    border-radius: 4px;
+    box-sizing: border-box; 
+
+}
+
 
 
 .column select,
@@ -498,7 +490,7 @@ input[type=date] {
 
 .column label {
     font-size: 13px;
-     color: #486581;
+    color: #486581;
     margin-bottom: 10px;
     font-weight: 400;
     display: inline-block;
@@ -613,3 +605,104 @@ fieldset{
       background-color: lightgreen;
     }
   } */
+
+  .profile1 {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    /* border: 1px solid rgb(216, 214, 233); */
+    border-radius: 5px;
+    background-color: white;
+    
+}
+  
+.expandle-details{
+    width:100%;
+    height:300px;
+    display: none;
+    overflow: hidden;
+}
+
+  .collapsible {
+    color: #627d98;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    
+  }
+  
+.profile1 h4{
+    width: 100%;
+    line-height: 50px;
+    padding-left: 15px;
+    color: #627d98;
+    
+}
+
+.column1 {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    background-color: white;
+    /* border: 0.5px solid rgb(216, 214, 233); */
+    border-radius: 5px;
+    overflow:hidden;
+}
+
+.column1 input[type=text] {
+    width: auto;
+    height: 25px;
+    padding-left: 15px;
+    margin: 5px;
+    /*display: inline-block;*/
+    border:  0.5px solid rgb(216, 214, 233); ;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+textarea{
+    width: 170px;
+    resize: vertical;
+   
+    /* padding-left: 15px; */
+    border:  0.5px solid rgb(216, 214, 233); ;
+    border-radius: 4px;
+    box-sizing: border-box; 
+
+}
+
+
+
+.column1 select,
+input[type=date] {
+    width: 170px;
+    height: 25px;
+    padding-left: 15px;
+    margin: 5px;
+    margin-bottom: 10px;
+    border:  0.5px solid rgb(216, 214, 233); ;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.column1 label {
+    font-size: 13px;
+    color: #486581;
+    margin-bottom: 10px;
+    font-weight: 400;
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+}
+   .active, .collapsible:hover {
+    color: blue;
+    font-size: 16px;
+  }
+
+  .other-details {
+    width: 100%;
+    height: 300px;
+    /* margin-bottom: 20px; */
+       display: flex;
+}

@@ -84,7 +84,6 @@ function ageCalculator() {
              
   }
 }
-
   const form = document.getElementById("patientDetailsForm");
 
   form.addEventListener('submit', (e) => {
@@ -95,4 +94,25 @@ function ageCalculator() {
     console.log(obj);
   });
   
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    // var content = document.getElementsByClassName("expandle-details");
+    var content = this.parentElement.nextElementSibling;
+    console.log("prinitng.."+content);
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      // document.getElementsByClassName("profile1").style.border = "1px solid rgb(216, 214, 233);";
+      
+     } else {
+       // set border of other details title h4
+      content.style.display = "block";
+      // document.getElementsByClassName("profile1").style.border = "1px solid rgb(216, 214, 233);";
+      
+    }
+  });
+}
 
