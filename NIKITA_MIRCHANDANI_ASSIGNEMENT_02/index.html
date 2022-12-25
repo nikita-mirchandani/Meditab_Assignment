@@ -74,6 +74,9 @@
             <div id="extra-nav">Patient-Bar</div>
             <div id="maindiv"><!--maindiv(height: 100vh-100px): 1st sidebar and 2nd Patient-detail container-->
                 <div class="sidebar">
+                    <h4><button type="button" class="sidebar-arrow"><i
+                                class="fa-sharp fa-solid fa-angle-left"></i></button>
+                    </h4>
                     <a href="#about">Dashboard</a>
                     <a href="#services">Demographics</a>
                     <a href="#clients">Insurance</a>
@@ -103,7 +106,7 @@
                     <a href="#contact">Statements</a>
                     <a href="#contact">Ledger</a>
                 </div>
-                <div id="Patient-details"><!--Patient-details: 1st button part and 2nd profile container whole-->
+                <div class="Patient-details"><!--Patient-details: 1st button part and 2nd profile container whole-->
                     <div id="button-nav">
                         <form id="checkbox">
                             <input type="checkbox" id="active" name="active" value="active">
@@ -309,28 +312,55 @@
                                                         style="color: #627d98;"></i></div>
                                             </div>
 
-                                            <div class="phone">
-                                                <label>Phone <i class="fa-solid fa-circle-plus"
-                                                        style="color: #627d98;"></i></label> <br />
-                                                <div class="phone-header">
-                                                    <p class="type">Type</p>
-                                                    <p class="code">Code</p>
-                                                    <p class="number">Number</p>
-                                                    <p class="">Ext</p>
+                                            <div id="phone">
+                                                <label> Phone <button class="phone-add" onclick="add_phone_icon()"> <i
+                                                            class="fa-solid fa-circle-plus"></i></button></label>
+                                                <div id="add-phone-template">
+                                                    <div class="phone-header">
+                                                        <p class="type">Type</p>
+                                                        <p class="code">Code</p>
+                                                        <p class="number">Number</p>
+                                                        <p class="">Ext</p>
+                                                    </div>
+                                                    <hr>
+                                                    <div id="phone-inputs">
+                                                        <select name="type" id="type" class="type-input">
+                                                            <option value="Cell">Cell</option>
+                                                            <option value="Landline">Landline</option>
+                                                        </select>
+                                                        <select name="code" id="code" class="code-input">
+                                                            <option value="+1">+1</option>
+                                                            <option value="+91">+91</option>
+                                                        </select>
+                                                        <input type="text" name="number" id="number"
+                                                            class="number-input">
+                                                        <div id="delete"><i class="fa-solid fa-trash"
+                                                                style="color: #627d98;"></i></div>
+                                                    </div>
                                                 </div>
-                                                <hr>
-                                                <div class="phone-inputs">
-                                                    <select name="type" id="type" class="type-input">
-                                                        <option value="Cell">Cell</option>
-                                                        <option value="Landline">Landline</option>
-                                                    </select>
-                                                    <select name="code" id="code" class="code-input">
-                                                        <option value="+1">+1</option>
-                                                        <option value="+91">+91</option>
-                                                    </select>
-                                                    <input type="text" name="number" id="number" class="number-input">
-                                                    <div id="delete"><i class="fa-solid fa-trash"
-                                                            style="color: #627d98;"></i></div>
+                                                <!-- Template -->
+                                                <div id="newadd-phone-template">
+                                                    <div class="phone-header">
+                                                        <p class="type">Type</p>
+                                                        <p class="code">Code</p>
+                                                        <p class="number">Number</p>
+                                                        <p class="">Ext</p>
+                                                    </div>
+                                                    <hr>
+                                                    <div id="phone-inputs">
+                                                        <select name="type" id="type" class="type-input">
+                                                            <option value="Cell">Cell</option>
+                                                            <option value="Landline">Landline</option>
+                                                        </select>
+                                                        <select name="code" id="code" class="code-input">
+                                                            <option value="+1">+1</option>
+                                                            <option value="+91">+91</option>
+                                                        </select>
+                                                        <input type="text" name="number" id="number"
+                                                            class="number-input">
+                                                        <!-- <div id="delete"><button ><i class="fa-solid fa-trash"
+                                                                style="color: #627d98;"></i></button></div> -->
+                                                    </div>
                                                 </div>
                                             </div>
                                             <label>Fax <i class="fa-solid fa-circle-plus"
@@ -526,7 +556,7 @@
                                             <br />
                                             <label for="Note">Note:</label>
                                             <textarea id="note" name="note"></textarea>
-                                       
+
                                         </div>
                                         <div class="column1">
                                             <label for="GI">Gender Identity:</label>
@@ -534,7 +564,7 @@
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
                                                 <option value="Other">Other</option>
-                                             </select>
+                                            </select>
                                             <br />
                                             <label for="RS">Referral Source:</label>
                                             <select>
@@ -556,7 +586,7 @@
                                                 <option value="Christain">Christain</option>
                                             </select>
                                             <br />
-                                           </div>
+                                        </div>
                                         <div class="column1">
                                             <label for="so">Sexual Orientation:</label>
                                             <select>
@@ -591,6 +621,25 @@
                                     </div>
                                 </div>
                             </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rightbar">
+            <a href=""><i class="fa-solid fa-fax"></i></a>
+            <p>4</p>
+            <a href=""><i class="fa-solid fa-comment-dots"></i></a>
+            <p>0</p>
+            <a href=""><i class="fa-sharp fa-solid fa-envelope"></i></a>
+            <p>4</p>
+            <a href=""><i class="fa-solid fa-voicemail"></i></a>
+            <p>0</p>
+            <a href=""><i class="fa-solid fa-rectangle-list"></i></a>
+            <p>0</p>
+            <a href=""><i class="fa-solid fa-list-check"></i></a>
+            <a href=""><i class="fa-solid fa-note-sticky"></i></a>
+        </div>
+    </div>
 </body>
 <script src="index.js"></script>
 

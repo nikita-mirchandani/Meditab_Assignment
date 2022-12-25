@@ -115,4 +115,49 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+const sidebar = document.querySelector('.sidebar');
+const mainContent = document.querySelector('.Patient-details')
+const rightbutton = document.querySelector('.sidebar-arrow')
+const arrowleft = rightbutton.querySelector('.fa-sharp.fa-solid.fa-angle-left')
+console.log(arrowleft);
+document.querySelector('.sidebar-arrow').onclick = function () {
+  sidebar.classList.toggle('sidebar_small');
+  mainContent.classList.toggle('Patient-details_large');
+  arrowleft.classList.toggle('fa-sharp.fa-solid.fa-angle-right');
+}
 
+ 
+// var col = document.getElementsByClassName("phone-add");
+// var i;
+
+// for (i = 0; i < col.length; i++) {
+//    col[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var content = this.parentElement.nextElementSibling;
+//     if (content.style.display === "block") {
+//       content.style.display = "none";
+//      } else {
+//       content.style.display = "block";
+//     }
+//   });
+// }
+var ct = 1;
+function add_phone_icon()
+{
+	ct++;
+	var div1 = document.createElement('div');
+	div1.id = ct;
+	// link to delete extended form elements
+  var delLink = '<div style="width:250px;direction: rtl;margin: 5px;"><button type-"button" onclick="delIt('+ ct +')"><i class="fa-solid fa-trash"  style="color: #627d98;"></i></button></div>';
+	// var delLink = '<div style="text-align:right;margin-right:65px"><a href="javascript:delIt('+ ct +')">Del</a></div>';
+	div1.innerHTML = document.getElementById('newadd-phone-template').innerHTML + delLink;
+	document.getElementById('add-phone-template').appendChild(div1);
+}
+
+function delIt(eleId)
+{
+	d = document;
+	var ele = d.getElementById(eleId);
+	var parentEle = d.getElementById('add-phone-template');
+	parentEle.removeChild(ele);
+}
