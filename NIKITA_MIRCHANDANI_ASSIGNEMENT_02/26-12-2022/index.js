@@ -121,7 +121,6 @@ document.querySelector('.sidebar-arrow').onclick = function () {
   sidebar.classList.toggle('sidebar_small');
   mainContent.classList.toggle('Patient-details_large');
   sidebar_btn.style.transform="rotate(180deg)";
-  // arrowleft.classList.toggle('fa-sharp.fa-solid.fa-angle-right');
 }
 
 /* 
@@ -211,33 +210,33 @@ const htmldata = `
     <div id="delete"><i class="fa-solid fa-trash"
             style="color: #627d98;"></i></div>
 </div>
-
 <div class="phone">
-    <label> Phone <button class="phone-add" onclick="add_phone_icon()"> <i
-                class="fa-solid fa-circle-plus"></i></button></label>
-    
-        <div class="phone-header">
-            <p class="type">Type</p>
-            <p class="code">Code</p>
-            <p class="number">Number</p>
-            <p class="">Ext</p>
-        </div>
-        <hr>
-        <div class="phone-inputs-container">
-        <div id="phone-inputs">
-            <select name="type" id="type" class="type-input">
+<label> Phone <button class="phone-add" onclick="add_phone_icon(this)"> <i
+            class="fa-solid fa-circle-plus"></i></button></label>
+
+    <div class="phone-header">
+        <p class="type">Type</p>
+        <p class="code">Code</p>
+        <p class="number">Number</p>
+        <p class="">Ext</p>
+    </div>
+    <hr>
+    <div class="phone-inputs-container">
+        <div class="phone-inputs">
+            <select name="type1" id="type1" class="type-input">
                 <option value="Cell">Cell</option>
                 <option value="Landline">Landline</option>
             </select>
-            <select name="code" id="code" class="code-input">
+            <select name="code1" id="code1" class="code-input">
                 <option value="+1">+1</option>
                 <option value="+91">+91</option>
             </select>
-            <input type="text" name="number" id="number"
+            <input type="text" name="number1" id="number1"
                 class="number-input">
-            <div id="delete"><i class="fa-solid fa-trash"
-                    style="color: #627d98;"></i></div>
-        </div>
+                <button class="phone-delete" type="button" onclick="delete_phone_details(this)" ><i class="fa-solid fa-trash"
+                    style="color: #627d98;"></i></button>
+                
+        </div>  
     </div>
 </div>
 <label>Fax <i class="fa-solid fa-circle-plus"
@@ -258,40 +257,23 @@ function delete_details(deletebtn){
   deletebtn.closest(".Twoforms").remove();
 }
 function add_phone_icon(btn){
-  const addphonedata=` <div id="phone-inputs">
-  <select name="type" id="type" class="type-input">
+  const addphonedata=`<div class="phone-inputs">
+  <select name="type1" id="type1" class="type-input">
       <option value="Cell">Cell</option>
       <option value="Landline">Landline</option>
   </select>
-  <select name="code" id="code" class="code-input">
+  <select name="code1" id="code1" class="code-input">
       <option value="+1">+1</option>
       <option value="+91">+91</option>
   </select>
-  <input type="text" name="number" id="number"
+  <input type="text" name="number1" id="number1"
       class="number-input">
-      <div id="delete"><button type="button"><i class="fa-solid fa-trash"
-      style="color: #627d98;"></i></button></div>
-</div>`;
+      <button class="phone-delete" type="button" onclick="delete_phone_details(this)" ><i class="fa-solid fa-trash"
+          style="color: #627d98;"></i></button>
+</div>  `;
 
 btn.closest('.phone').querySelector('.phone-inputs-container').innerHTML += addphonedata;
 }
-
-// function add_phone_icon2(){
-//   const addphonedata2=` <div id="phone-inputs">
-//   <select name="type1" id="type1" class="type-input">
-//       <option value="Cell">Cell</option>
-//       <option value="Landline">Landline</option>
-//   </select>
-//   <select name="code1" id="code1" class="code-input">
-//       <option value="+1">+1</option>
-//       <option value="+91">+91</option>
-//   </select>
-//   <input type="text" name="number1" id="number1"
-//       class="number-input">
-//       <div id="delete"><button type="button" ><i class="fa-solid fa-trash"
-//           style="color: #627d98;"></i></button></div>
-// </div>`;
-
-// document.getElementById("phone-inputs-container2").innerHTML += addphonedata2;
-
-// }
+function delete_phone_details(deletebtn){
+  deletebtn.closest('.phone-inputs').remove();
+}

@@ -316,7 +316,7 @@
                                             <div class="phone">
                                                 <label> Phone <button class="phone-add" onclick="add_phone_icon(this)"> <i
                                                             class="fa-solid fa-circle-plus"></i></button></label>
-                                               
+                                                
                                                     <div class="phone-header">
                                                         <p class="type">Type</p>
                                                         <p class="code">Code</p>
@@ -325,46 +325,22 @@
                                                     </div>
                                                     <hr>
                                                     <div class="phone-inputs-container">
-                                                    <div id="phone-inputs">
-                                                        <select name="type" id="type" class="type-input">
-                                                            <option value="Cell">Cell</option>
-                                                            <option value="Landline">Landline</option>
-                                                        </select>
-                                                        <select name="code" id="code" class="code-input">
-                                                            <option value="+1">+1</option>
-                                                            <option value="+91">+91</option>
-                                                        </select>
-                                                        <input type="text" name="number" id="number"
-                                                            class="number-input">
-                                                            <div id="delete"><button type="button" ><i class="fa-solid fa-trash"
-                                                                style="color: #627d98;"></i></button></div>
+                                                        <div class="phone-inputs">
+                                                            <select name="type1" id="type1" class="type-input">
+                                                                <option value="Cell">Cell</option>
+                                                                <option value="Landline">Landline</option>
+                                                            </select>
+                                                            <select name="code1" id="code1" class="code-input">
+                                                                <option value="+1">+1</option>
+                                                                <option value="+91">+91</option>
+                                                            </select>
+                                                            <input type="text" name="number1" id="number1"
+                                                                class="number-input">
+                                                                <button class="phone-delete" type="button" onclick="delete_phone_details(this)" ><i class="fa-solid fa-trash"
+                                                                    style="color: #627d98;"></i></button>
+                                                                
+                                                        </div>  
                                                     </div>
-                                                  
-                                                </div>
-                                                <!-- Template -->
-                                                <!-- <div id="newadd-phone-template">
-                                                    <div class="phone-header">
-                                                        <p class="type">Type</p>
-                                                        <p class="code">Code</p>
-                                                        <p class="number">Number</p>
-                                                        <p class="">Ext</p>
-                                                    </div>
-                                                    <hr>
-                                                    <div id="phone-inputs">
-                                                        <select name="type" id="type" class="type-input">
-                                                            <option value="Cell">Cell</option>
-                                                            <option value="Landline">Landline</option>
-                                                        </select>
-                                                        <select name="code" id="code" class="code-input">
-                                                            <option value="+1">+1</option>
-                                                            <option value="+91">+91</option>
-                                                        </select>
-                                                        <input type="text" name="number" id="number"
-                                                            class="number-input">
-                                                         <div id="delete"><button ><i class="fa-solid fa-trash"
-                                                                style="color: #627d98;"></i></button></div> 
-                                                </div> 
-                                                 </div>  -->
                                             </div>
                                             <label>Fax <i class="fa-solid fa-circle-plus"
                                                     style="color: #627d98;"></i></label> <br />
@@ -431,7 +407,7 @@
                                                     </div>
                                                     <hr>
                                                     <div class="phone-inputs-container">
-                                                        <div id="phone-inputs">
+                                                        <div class="phone-inputs">
                                                             <select name="type1" id="type1" class="type-input">
                                                                 <option value="Cell">Cell</option>
                                                                 <option value="Landline">Landline</option>
@@ -442,12 +418,11 @@
                                                             </select>
                                                             <input type="text" name="number1" id="number1"
                                                                 class="number-input">
-                                                                <div id="delete"><button type="button" ><i class="fa-solid fa-trash"
-                                                                    style="color: #627d98;"></i></button></div>
-                                                        </div>
-                                                  
-                                                </div>
-                                                
+                                                                <button class="phone-delete" type="button" onclick="delete_phone_details(this)" ><i class="fa-solid fa-trash"
+                                                                    style="color: #627d98;"></i></button>
+                                                                
+                                                        </div>  
+                                                    </div>
                                             </div>
                                            
                                                 <label>Fax <i class="fa-solid fa-circle-plus"
