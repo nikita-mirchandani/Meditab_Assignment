@@ -336,28 +336,56 @@
                                                             </select>
                                                             <input type="text" name="number1" id="number1"
                                                                 class="number-input">
-                                                                <button class="phone-delete" type="button" onclick="delete_phone_details(this)" ><i class="fa-solid fa-trash"
+                                                            <button class="phone-delete" type="button" onclick="delete_phone_details(this)" ><i class="fa-solid fa-trash"
                                                                     style="color: #627d98;"></i></button>
                                                                 
                                                         </div>  
                                                     </div>
                                             </div>
-                                            <label>Fax <i class="fa-solid fa-circle-plus"
-                                                    style="color: #627d98;"></i></label> <br />
-                                                    <div class="email">
-                                                        <label>Email <button class="phone-add" onclick="add_email(this)"> <i
-                                                        class="fa-solid fa-circle-plus"></i></button></label> <br />
-                                                        
-                                                        <div class="email-body">
-                                                            <div class="email-fields">
-                                                            <input type="text" id="streetwidth">
-                                                            <div class="trash"><button class="delete-details" type="button" onclick="delete_email(this)"><i class="fa-solid fa-trash"
-                                                                    style="color: #627d98;"></i></button></div>
-                                                            </div>
-                                                        </div>
+                                            <div class="fax">
+                                                <label> Fax <button class="phone-add" onclick="add_fax_icon(this)"> <i
+                                                            class="fa-solid fa-circle-plus"></i></button></label>
+                                                    <div class="fax-header">
+                                                        <p class="code">Code</p>
+                                                        <p class="number">Number</p>                                                    </div>
+                                                    <hr>
+                                                    <div class="fax-inputs-container">
+                                                        <div class="fax-inputs">
+                                                            <input type="text" name="faxcode" id="faxcode"
+                                                                class="code-input" value=" + 1">
+                                                            <input type="text" name="number1" id="number1"
+                                                                class="number-input" placeholder=" Number">
+                                                            <button class="phone-delete" type="button" onclick="delete_fax_details(this)" ><i class="fa-solid fa-trash"
+                                                                    style="color: #627d98;"></i></button>     
+                                                        </div>  
                                                     </div>
-                                            <label>Website <i class="fa-solid fa-circle-plus"
-                                                    style="color: #627d98;"></i></label> <br />
+                                            </div>
+                                              
+                                            <div class="email">
+                                                <label>Email <button class="phone-add" onclick="add_email(this)"> <i
+                                                class="fa-solid fa-circle-plus"></i></button></label> <br />
+                                                
+                                                <div class="email-body">
+                                                    <div class="email-fields">
+                                                    <input type="text" id="streetwidth">
+                                                    <div class="trash"><button class="delete-details" type="button" onclick="delete_email(this)"><i class="fa-solid fa-trash"
+                                                            style="color: #627d98;"></i></button></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="website">
+                                                <label>Website <button class="phone-add" onclick="add_website(this)"> <i
+                                                class="fa-solid fa-circle-plus"></i></button></label> <br />
+                                                
+                                                <div class="website-body">
+                                                    <!-- <div class="website-fields">
+                                                    <input type="text" id="streetwidth">
+                                                    <div class="trash"><button class="delete-details" type="button" onclick="delete_website(this)"><i class="fa-solid fa-trash"
+                                                            style="color: #627d98;"></i></button></div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                            
                                         </fieldset>
                                         <div class="Twoforms">
                                         <fieldset>
@@ -431,8 +459,24 @@
                                                     </div>
                                             </div>
                                            
-                                                <label>Fax <i class="fa-solid fa-circle-plus"
-                                                        style="color: #627d98;"></i></label> <br />
+                                            <div class="fax">
+                                                <label> Fax <button class="phone-add" onclick="add_fax_icon(this)"> <i
+                                                            class="fa-solid fa-circle-plus"></i></button></label>
+                                                    <div class="fax-header">
+                                                        <p class="code">Code</p>
+                                                        <p class="number">Number</p>                                                    </div>
+                                                    <hr>
+                                                    <div class="fax-inputs-container">
+                                                        <div class="fax-inputs">
+                                                            <input type="text" name="faxcode" id="faxcode"
+                                                                class="code-input" value=" + 1">
+                                                            <input type="text" name="number1" id="number1"
+                                                                class="number-input" placeholder=" Number">
+                                                            <button class="phone-delete" type="button" onclick="delete_fax_details(this)" ><i class="fa-solid fa-trash"
+                                                                    style="color: #627d98;"></i></button>     
+                                                        </div>  
+                                                    </div>
+                                            </div>
                                                 <div class="email">
                                                     <label>Email <button class="phone-add" onclick="add_email(this)"> <i
                                                     class="fa-solid fa-circle-plus"></i></button></label> <br />
@@ -445,8 +489,18 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <label>Website <i class="fa-solid fa-circle-plus"
-                                                        style="color: #627d98;"></i></label> <br />
+                                                <div class="website">
+                                                    <label>Website <button class="phone-add" onclick="add_website(this)"> <i
+                                                    class="fa-solid fa-circle-plus"></i></button></label> <br />
+                                                    
+                                                    <div class="website-body">
+                                                        <!-- <div class="website-fields">
+                                                        <input type="text" id="streetwidth">
+                                                        <div class="trash"><button class="delete-details" type="button" onclick="delete_website(this)"><i class="fa-solid fa-trash"
+                                                                style="color: #627d98;"></i></button></div>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
 
                                         </fieldset>
                                         </div>

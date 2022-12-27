@@ -239,8 +239,24 @@ const htmldata = `
         </div>  
     </div>
 </div>
-<label>Fax <i class="fa-solid fa-circle-plus"
-        style="color: #627d98;"></i></label> <br />
+<div class="fax">
+<label> Fax <button class="phone-add" onclick="add_fax_icon(this)"> <i
+            class="fa-solid fa-circle-plus"></i></button></label>
+    <div class="fax-header">
+        <p class="code">Code</p>
+        <p class="number">Number</p>                                                    </div>
+    <hr>
+    <div class="fax-inputs-container">
+        <div class="fax-inputs">
+            <input type="text" name="faxcode" id="faxcode"
+                class="code-input" value=" + 1">
+            <input type="text" name="number1" id="number1"
+                class="number-input" placeholder=" Number">
+            <button class="phone-delete" type="button" onclick="delete_fax_details(this)" ><i class="fa-solid fa-trash"
+                    style="color: #627d98;"></i></button>     
+        </div>  
+    </div>
+</div>
         <div class="email">
         <label>Email <button class="phone-add" onclick="add_email(this)"> <i
         class="fa-solid fa-circle-plus"></i></button></label> <br />
@@ -253,8 +269,18 @@ const htmldata = `
             </div>
         </div>
     </div>
-<label>Website <i class="fa-solid fa-circle-plus"
-        style="color: #627d98;"></i></label> <br />
+    <div class="website">
+    <label>Website <button class="phone-add" onclick="add_website(this)"> <i
+    class="fa-solid fa-circle-plus"></i></button></label> <br />
+    
+    <div class="website-body">
+        <div class="website-fields">
+        <input type="text" id="streetwidth">
+        <div class="trash"><button class="delete-details" type="button" onclick="delete_website(this)"><i class="fa-solid fa-trash"
+                style="color: #627d98;"></i></button></div>
+        </div>
+    </div>
+</div>
 </fieldset>
 </div>`
 document.getElementById("address-container").innerHTML += htmldata;
@@ -293,4 +319,35 @@ function add_email(btn){
 }
 function delete_email(deletebtn){
   deletebtn.closest('.email-fields').remove();
+}
+
+
+
+function add_fax_icon(btn){
+  const addfaxdata=` <div class="fax-inputs">
+  <input type="text" name="faxcode" id="faxcode"
+      class="code-input" value=" + 1">
+  <input type="text" name="number1" id="number1"
+      class="number-input" placeholder=" Number">
+  <button class="phone-delete" type="button" onclick="delete_fax_details(this)" ><i class="fa-solid fa-trash"
+          style="color: #627d98;"></i></button>
+      
+</div>`;
+
+btn.closest('.fax').querySelector('.fax-inputs-container').innerHTML += addfaxdata;
+}
+function delete_fax_details(deletebtn){
+  deletebtn.closest('.fax-inputs').remove();
+}
+
+function add_website(btn){
+  const addwebsitedata = `<div class="website-fields">
+  <input type="text" id="streetwidth">
+  <div class="trash"><button class="delete-details" type="button" onclick="delete_website(this)"><i class="fa-solid fa-trash"
+          style="color: #627d98;"></i></button></div>
+  </div>`;
+  btn.closest('.website').querySelector('.website-body').innerHTML+=addwebsitedata;
+}
+function delete_website(deletebtn){
+  deletebtn.closest('.website-fields').remove();
 }

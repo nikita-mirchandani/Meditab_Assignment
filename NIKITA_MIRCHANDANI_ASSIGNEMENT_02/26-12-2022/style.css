@@ -583,7 +583,7 @@ fieldset{
     display: inline-block;
 } 
 
-.phone-header{
+.phone-header,.fax-header{
     display: flex;
 }
 
