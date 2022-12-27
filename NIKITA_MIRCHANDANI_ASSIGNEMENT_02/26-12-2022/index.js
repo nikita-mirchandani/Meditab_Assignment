@@ -241,12 +241,18 @@ const htmldata = `
 </div>
 <label>Fax <i class="fa-solid fa-circle-plus"
         style="color: #627d98;"></i></label> <br />
-<label>Email <i class="fa-solid fa-circle-plus"
-        style="color: #627d98;"></i></label> <br />
-<input type="text" id="streetwidth">
-<div class="trash"><i class="fa-solid fa-trash" style="color: #627d98;"></i>
-</div>
-<br />
+        <div class="email">
+        <label>Email <button class="phone-add" onclick="add_email(this)"> <i
+        class="fa-solid fa-circle-plus"></i></button></label> <br />
+        
+        <div class="email-body">
+            <div class="email-fields">
+            <input type="text" id="streetwidth">
+            <div class="trash"><button class="delete-details" type="button" onclick="delete_email(this)"><i class="fa-solid fa-trash"
+                    style="color: #627d98;"></i></button></div>
+            </div>
+        </div>
+    </div>
 <label>Website <i class="fa-solid fa-circle-plus"
         style="color: #627d98;"></i></label> <br />
 </fieldset>
@@ -276,4 +282,15 @@ btn.closest('.phone').querySelector('.phone-inputs-container').innerHTML += addp
 }
 function delete_phone_details(deletebtn){
   deletebtn.closest('.phone-inputs').remove();
+}
+function add_email(btn){
+  const addemaildata = `<div class="email-fields">
+  <input type="text" id="streetwidth">
+  <div class="trash"><button class="delete-details" type="button" onclick="delete_email(this)"><i class="fa-solid fa-trash"
+          style="color: #627d98;"></i></button></div>
+  </div>`;
+  btn.closest('.email').querySelector('.email-body').innerHTML+=addemaildata;
+}
+function delete_email(deletebtn){
+  deletebtn.closest('.email-fields').remove();
 }
