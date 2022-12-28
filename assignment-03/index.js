@@ -134,38 +134,42 @@ const htmldata = `
         <option value="">Work</option>
     </select>
 </legend>
+<div class="address-content">
 <div class="address-field-header">
-    <h3>Address</h3><button type="button" class="delete-details" onclick="delete_details(this)"><i class="fa-solid fa-trash"
-    style="color: #627d98;"></i></button>
+    <h3>Address <button type="button" class="phone-add" onclick="add_address_field(this)"><i class="fa-solid fa-circle-plus" style="display:none;"></i></button></h3><button type="button" class="delete-details" onclick="delete_details(this)"><i class="fa-solid fa-trash"
+        style="color: #627d98;"></i></button>
 </div>
-<label for="Street">Street</label><br />
-<input type="text" id="streetwidth"><br />
-<div id="sameline">
-    <div class="block">
-        <label for="zip">Zip</label><br />
-        <input type="text" id="zip">
-    </div>
-    <div class="block">
-        <label for="City">City</label><br />
-        <input type="text" id="city">
-    </div>
-    <div class="block">
-        <label for="State">State</label><br />
-        <select id="state">
-            <option value=""></option>
-            <option value="(AL) ALABAMA">(AL) ALABAMA</option>
-        </select>
-    </div>
+<div class="address-field-container">
+    <label for="Street">Street</label><br />
+    <input type="text" id="streetwidth"><br />
+    <div id="sameline">
+        <div class="block">
+            <label for="zip">Zip</label><br />
+            <input type="text" id="zip">
+        </div>
+        <div class="block">
+            <label for="City">City</label><br />
+            <input type="text" id="city">
+        </div>
+        <div class="block">
+            <label for="State">State</label><br />
+            <select id="state">
+                <option value=""></option>
+                <option value="(AL) ALABAMA">(AL) ALABAMA</option>
+            </select>
+        </div>
 
-    <div class="block">
-        <label for="Country">Country</label><br />
-        <select id="country">
-            <option value="US">US</option>
-            <option value="PR">PR</option>
-        </select>
+        <div class="block">
+            <label for="Country">Country</label><br />
+            <select id="country">
+                <option value="US">US</option>
+                <option value="PR">PR</option>
+            </select>
+        </div>
+        <div id="delete"><button type="button" class="delete-details" onclick="remove_address_field(this)"><i class="fa-solid fa-trash"
+            style="color: #627d98;"></i></button></div>
     </div>
-    <div id="delete"><i class="fa-solid fa-trash"
-            style="color: #627d98;"></i></div>
+</div>
 </div>
 <div class="phone">
                                                 <label> Phone <button class="phone-add" onclick="add_phone_icon(this)"> <i
@@ -203,23 +207,7 @@ const htmldata = `
                                             <label> Fax <button class="phone-add" onclick="add_fax_icon(this)"> <i
                                                         class="fa-solid fa-circle-plus"></i></button></label>
                                                     <div class="fax-content">
-                                                    <div class="fax-header-content">
-                                                        <div class="fax-header">
-                                                            <p class="code">Code</p>
-                                                            <p class="number">Number</p>
-                                                        </div>
-                                                        <hr>
-                                                    </div>
-                                                    <div class="fax-inputs-container">
-                                                        <div class="fax-inputs">
-                                                            <input type="text" name="faxcode" id="faxcode"
-                                                                class="code-input" value=" + 1">
-                                                            <input type="text" name="number1" id="number1"
-                                                                class="number-input" placeholder=" Number">
-                                                            <button class="phone-delete" type="button" onclick="delete_fax_details(this)" ><i class="fa-solid fa-trash"
-                                                                    style="color: #627d98;"></i></button>     
-                                                        </div>  
-                                                    </div>
+                                                    
                                                     </div>
                                         </div>
         <div class="email">
@@ -239,11 +227,7 @@ const htmldata = `
     class="fa-solid fa-circle-plus"></i></button></label> <br />
     
     <div class="website-body">
-        <div class="website-fields">
-        <input type="text" id="streetwidth">
-        <div class="trash"><button class="delete-details" type="button" onclick="delete_website(this)"><i class="fa-solid fa-trash"
-                style="color: #627d98;"></i></button></div>
-        </div>
+       
     </div>
 </div>
 </fieldset>
@@ -350,4 +334,48 @@ function add_website(btn){
 }
 function delete_website(deletebtn){
   deletebtn.closest('.website-fields').remove();
+}
+
+const addressFieldContainer=` <div class="address-field-container">
+<label for="Street">Street</label><br />
+<input type="text" id="streetwidth"><br />
+<div id="sameline">
+    <div class="block">
+        <label for="zip">Zip</label><br />
+        <input type="text" id="zip">
+    </div>
+    <div class="block">
+        <label for="City">City</label><br />
+        <input type="text" id="city">
+    </div>
+    <div class="block">
+        <label for="State">State</label><br />
+        <select id="state">
+            <option value=""></option>
+            <option value="(AL) ALABAMA">(AL) ALABAMA</option>
+        </select>
+    </div>
+
+    <div class="block">
+        <label for="Country">Country</label><br />
+        <select id="country">
+            <option value="US">US</option>
+            <option value="PR">PR</option>
+        </select>
+    </div>
+    <div id="delete"><i class="fa-solid fa-trash"
+            style="color: #627d98;"></i></div>
+</div>
+</div>`;
+
+function add_address_field(btn){
+
+  btn.closest('.address-content').querySelector('.address-field-container').style.display = "block";
+  btn.closest('.address-content').querySelector('.fa-circle-plus').style.display = "none";
+
+}
+function remove_address_field(btn){
+  btn.closest('.address-content').querySelector('.address-field-container').style.display = "none";
+  btn.closest('.address-content').querySelector('.fa-circle-plus').style.display = "inline-block";
+
 }

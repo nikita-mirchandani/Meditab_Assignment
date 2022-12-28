@@ -575,7 +575,7 @@ fieldset{
 }
 .address-field-header h3{
     padding-top: 5px;
-    width: 97.4%;
+    width: 94.4%;
     padding-bottom: 10px;
     font-size: 13px;
     font-weight: 200;
@@ -732,14 +732,15 @@ input[type=date] {
 }
 .phone-delete{
     background-color: white;
-     width: 225px;
+     width: 220px;
    direction: rtl;
    margin: 5px;
 }
-   .phone-delete:hover,.delete-details:hover, .active, .collapsible:hover,#deleteicon:hover,#contact-details-addbtn:hover {
+.phone-delete:hover,.delete-details:hover, .active, .collapsible:hover,#deleteicon:hover,#contact-details-addbtn:hover {
     /* color: blue; */
     cursor: pointer;
     font-size: 16px;
+   
   }
 
   .other-details {
