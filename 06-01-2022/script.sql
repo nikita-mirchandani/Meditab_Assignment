@@ -310,33 +310,32 @@ CREATE OR REPLACE FUNCTION SEARCHING(
  query1 varchar(2000) := 'SELECT Patient.LAST_NAME,Patient.FIRST_NAME,SEX.GENDER,Patient.DOB FROM Patient left JOIN SEX ON Patient.SEX = SEX.SEX_ID ';
  conditional varchar(2000) := 'where 1=1';
  BEGIN
-   case 
+--	raise notice '%s' query1;
+	query1 := query1 ||
+	    
 	  (
-	 case
-	  when fname is not null 
-	  then conditional:= conditional ||' and Patient.FIRST_NAME ='''|| fname || ''''
-	  else true
-	 end
-	 case
-	  when lname is not null 
-	  then conditional:= conditional ||' and Patient.LAST_NAME ='''|| lname || ''''
-	  else true
-	 end
-	 case
-	  when _sex is not null 
-	  then conditional:= conditional ||' and SEX.GENDER ='''|| _sex || ''''
-	  else true
-	end
-	case
-	  when do_b is not null 
-	  then conditional:= conditional ||' and Patient.DOB ='''|| do_b || ''''
-	  else true
-	end
+		 case
+		  when fname is not null 
+		  then conditional:= conditional ||' and Patient.FIRST_NAME ='''|| fname || ''''
+		  else true
+		 end
+		 case
+		  when lname is not null 
+		  then conditional:= conditional ||' and Patient.LAST_NAME ='''|| lname || ''''
+		  else true
+		 end
+		 case
+		  when _sex is not null 
+		  then conditional:= conditional ||' and SEX.GENDER ='''|| _sex || ''''
+		  else true
+		end
+		case
+		  when do_b is not null 
+		  then conditional:= conditional ||' and Patient.DOB ='''|| do_b || ''''
+		  else true
+		end
 	)
-end
-	
-	raise notice '%s' query1;
-	query1 := query1 || conditional || ' ORDER BY ' || orderby || ' asc limit ' || PageSize || ' OFFSET ((' || PageNumber || '-1)*'|| PageSize || ');'	
+	|| ' ORDER BY ' || orderby || ' asc limit ' || PageSize || ' OFFSET ((' || PageNumber || '-1)*'|| PageSize || ');'	
 	RETURN QUERY execute query1;
 END;
 $BODY$
