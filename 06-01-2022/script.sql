@@ -41,10 +41,12 @@ CREATE TABLE IF NOT EXISTS Patient(
   MIDDLE_NAME VARCHAR(20),
   DOB DATE,
   SEX INT,
+  isDeleted boolean default false,
   created_on timestamp default CURRENT_TIMESTAMP not null,
   CONSTRAINT sex_constraint FOREIGN KEY(SEX) REFERENCES SEX(SEX_ID)
 );
 SET timezone = 'Asia/Calcutta';
+ALTER TABLE Patient ADD suburb VARCHAR2(100);
 INSERT into Patient (FIRST_NAME,LAST_NAME,MIDDLE_NAME,SEX) VALUES ('NIKITA','MIRCHANDANI','M',2);
 INSERT into Patient (FIRST_NAME,LAST_NAME,MIDDLE_NAME,SEX) VALUES ('NIKITA','MIRCHANDANI','M',2);
 INSERT into Patient (FIRST_NAME,LAST_NAME,MIDDLE_NAME,SEX) VALUES ('fb','dv','M',1);
@@ -121,7 +123,7 @@ CREATE TABLE PREFERENCE_TYPE_TABLE(
   PREF_ID SERIAL PRIMARY KEY,
   PREFERENCE_TYPE varchar(20)
 );
-insert into preference_type_table(PREFERENCE_TYPE) values('MAILING');
+insert into preference_type_table(PREFERENCE_TYPE) values('primary');
 SELECT * from PREFERENCE_TYPE_TABLE;
 
 
@@ -151,7 +153,7 @@ CREATE or REPLACE VIEW demographics AS
     LEFT JOIN RACE ON RACE.PATIENT_ID =  Patient.PATIENT_ID 
     LEFT JOIN ADDRESS ON Patient.PATIENT_ID = ADDRESS.PATIENT_ID 
     LEFT JOIN PREFERENCE_TABLE ON PREFERENCE_TABLE.PATIENT_ID= patient.PATIENT_ID
-    LEFT JOIN PREFERENCE_TYPE_TABLE ON PREFERENCE_TABLE.PREF_ID = PREFERENCE_TYPE_TABLE.PREF_ID AND PREFERENCE_TYPE_TABLE.PREF_ID=1
+    LEFT JOIN PREFERENCE_TYPE_TABLE ON PREFERENCE_TABLE.PREF_ID = PREFERENCE_TYPE_TABLE.PREF_ID AND PREFERENCE_TYPE_TABLE.preference_type ='primary'
     LEFT JOIN FAX ON PREFERENCE_TABLE.FAX_ID = FAX.FAX_ID
     LEFT JOIN PHONE ON PREFERENCE_TABLE.PHONE_ID = PHONE.PHONE_ID 
      ;
@@ -171,10 +173,10 @@ language plpgsql
 as  
 $$  
 Declare 
-
+primary_key integer;
 Begin  
-  INSERT INTO Patient(FIRST_NAME,LAST_NAME,MIDDLE_NAME,DOB,SEX) values(FIRST_NAME,LAST_NAME,MIDDLE_NAME,DOB,Sex);
-  return (SELECT PATIENT_ID FROM Patient ORDER BY created_on DESC LIMIT 1);  
+  INSERT INTO Patient(FIRST_NAME,LAST_NAME,MIDDLE_NAME,DOB,SEX) values(FIRST_NAME,LAST_NAME,MIDDLE_NAME,DOB,Sex) returning Patient_id into primary_key;
+  return primary_key;  
 End;  
 $$;  
 
@@ -186,113 +188,10 @@ SELECT * from Patient;
 
 
 --*Query4
-/*implemented in 2 ways(2 functions) : paging(have to specify argument field in call) and duplicate paging(no mention of column field during function call)*/
 
---1st way 
-CREATE OR REPLACE FUNCTION paging(
- PageNumber INTEGER = NULL,
- PageSize INTEGER = NULL,
- lname VARCHAR default null,
- fname VARCHAR default null,
- _sex VARCHAR default null,
- do_b date default null
- )
- RETURNS TABLE (
-  LAST_NAME varchar,
-  FIRST_NAME varchar,
-  SEX varchar,
-  DOB date
-) AS
- $BODY$
- BEGIN
-  RETURN QUERY
-  SELECT Patient.LAST_NAME,Patient.FIRST_NAME,SEX.GENDER,Patient.DOB FROM Patient left JOIN SEX ON Patient.SEX = SEX.SEX_ID
-  where
-  (
-  case 
-	  when lname is null and fname is null and _sex is null and do_b is null 
-	  then true
-	 else
-	  case 
-		  when lname is not null 
-		  then Patient.LAST_NAME=lname
-		   when fname is not null 
-		  then Patient.FIRST_NAME=fname
-		  when _sex is not null 
-		  then SEX.GENDER=_sex
-		  when do_b is not null 
-		  then Patient.DOB = do_b
-	  end
-	end
-	  )
-  ORDER BY LAST_NAME ASC ,FIRST_NAME ASC, SEX.GENDER ASC, DOB ASC
-  LIMIT PageSize
-  OFFSET ((PageNumber-1) * PageSize);
-END;
-$BODY$
-LANGUAGE plpgsql;
---working for all below conditions
-Select * from paging(1,4,lname=>'shah');
-Select * from paging(1,4,fname=>'NIKITA');
-Select * from paging(1,3,_sex=>'male');
-Select * from paging(1,10,do_b=>'2002-01-01');
-Select * from paging(1,10);
-
---Another(2nd) way 
-CREATE OR REPLACE FUNCTION duplicate_paging(
- PageNumber INTEGER = NULL,
- PageSize INTEGER = NULL,
- id VARCHAR default null
- )
- RETURNS TABLE (
-  LAST_NAME varchar,
-  FIRST_NAME varchar,
-  SEX varchar,
-  DOB date
-) AS
- $BODY$
- BEGIN
-  RETURN QUERY
-  SELECT Patient.LAST_NAME,Patient.FIRST_NAME,SEX.GENDER,Patient.DOB FROM Patient left JOIN SEX ON Patient.SEX = SEX.SEX_ID
-  where  (
-  case 
-	  when id is null 
-	  then true
-	  when id is not null then
-	  case 
-		  when id in (Patient.FIRST_NAME,Patient.LAST_NAME,SEX.GENDER)
-		  then true
-		  when id in (Patient.DOB::VARCHAR)
-		  then true
-	   end
-  end
-	)
-  ORDER BY LAST_NAME ASC ,FIRST_NAME ASC, SEX.GENDER ASC, DOB ASC
-  LIMIT PageSize
-  OFFSET ((PageNumber-1) * PageSize);
-END;
-$BODY$
-LANGUAGE plpgsql;
-
---shows according to fname matched
-Select * from duplicate_paging(1,10,'NIKITA');
-
---shows according to lname matched
-Select * from duplicate_paging(1,10,'shah');
-
---shows according to sex matched
-Select * from duplicate_paging(1,10,'female');
-
---shows according to date matched
-Select * from duplicate_paging(1,10,'2002-01-01');
-
---shows all records
-Select * from duplicate_paging(1,10,null);
-Select * from duplicate_paging(1,11);
-
-CREATE OR REPLACE FUNCTION SEARCHING(
- PageNumber INTEGER = NULL,
- PageSize INTEGER = NULL,
+CREATE OR REPLACE FUNCTION search_function(
+ PageNumber integer default 1 ,
+ PageSize integer default 20,
  lname VARCHAR default null,
  fname VARCHAR default null,
  _sex VARCHAR default null,
@@ -305,93 +204,78 @@ CREATE OR REPLACE FUNCTION SEARCHING(
   SEX varchar,
   DOB date
 ) AS
- $BODY$
+$BODY$
  declare
- query1 varchar(2000) := 'SELECT Patient.LAST_NAME,Patient.FIRST_NAME,SEX.GENDER,Patient.DOB FROM Patient left JOIN SEX ON Patient.SEX = SEX.SEX_ID ';
- conditional varchar(2000) := 'where 1=1';
- BEGIN
---	raise notice '%s' query1;
-	query1 := query1 ||
-	    
-	  (
-		 case
-		  when fname is not null 
-		  then conditional:= conditional ||' and Patient.FIRST_NAME ='''|| fname || ''''
-		  else true
-		 end
-		 case
-		  when lname is not null 
-		  then conditional:= conditional ||' and Patient.LAST_NAME ='''|| lname || ''''
-		  else true
-		 end
-		 case
-		  when _sex is not null 
-		  then conditional:= conditional ||' and SEX.GENDER ='''|| _sex || ''''
-		  else true
-		end
-		case
-		  when do_b is not null 
-		  then conditional:= conditional ||' and Patient.DOB ='''|| do_b || ''''
-		  else true
-		end
-	)
-	|| ' ORDER BY ' || orderby || ' asc limit ' || PageSize || ' OFFSET ((' || PageNumber || '-1)*'|| PageSize || ');'	
+ query1 varchar(2000) := 'SELECT Patient.LAST_NAME,Patient.FIRST_NAME,SEX.GENDER,Patient.DOB FROM Patient left JOIN SEX ON Patient.SEX = SEX.SEX_ID where 1=1 '; 
+
+BEGIN
+	query1 := query1 
+	|| case when $4 is not null then ' and Patient.FIRST_NAME ='''|| $4 || '''' else ' ' end		
+	|| case when $3 is not null then ' and Patient.LAST_NAME ='''|| $3 || '''' else ' ' end		
+	|| case when $5 is not null then ' and SEX.GENDER ='''|| $5 || '''' else ' ' end		
+	|| case when $6 is not null then ' and Patient.DOB ='''|| $6 || '''' else  ' 'end		
+	|| ' ORDER BY ' || $7 || ' asc limit ' || $2 || ' OFFSET ((' || $1 || '-1)*'|| $2 || ');';	
+	raise notice 'sql %' , query1;	
 	RETURN QUERY execute query1;
 END;
 $BODY$
 LANGUAGE plpgsql;
---working for all below conditions
-Select * from SEARCHING(1,4,lname=>'shah');
-
-
-create  or replace function  
-search_patient    
-            (
-            pageNumber in integer default 1 ,
-            pageSize in integer default 20,
-            firstName in varchar default null ,
-            lastName in varchar default null,
-            gender in varchar default null,
-            dateofbirth in varchar default null,
-            orderby in varchar default 'patient_id')
-returns table(     
-	LAST_NAME varchar,
-  FIRST_NAME varchar,
-  SEX varchar,
-  DOB date
-)
-language plpgsql
-as
-$$
-declare 
-query1 varchar(2000) := 'SELECT Patient.LAST_NAME,Patient.FIRST_NAME,SEX.GENDER,Patient.DOB FROM Patient left JOIN SEX ON Patient.SEX = SEX.SEX_ID where 1=1 ';
-conditional varchar(3000) := '';
- 
-begin
-    if firstName != '' then
-         conditional := 'and  Patient.FIRST_NAME = '''||$3||'''';
-    end if;
-    if lastName != '' then 
-        
-            conditional := conditional||' and Patient.LAST_NAME = '''||$4||'''';
-        
-    end if;
-    if gender != '' then 
-        
-            conditional := conditional||' and SEX.GENDER = '''||$5||'''';
-    end if;
-    if dateofbirth != '' then 
-                    conditional := conditional||' and Patient.DOB = '''||$6||'''';
-        
-    end if;
-    
-    query1 := query1||conditional||' ORDER BY '|| $7||' ASC LIMIT '|| pageSize ||' OFFSET (('||pageNumber||'-1) *'|| PageSize||')';
-    raise notice 'sql %' , query1;
-    return query execute query1;
-end;
-$$
-
-select * from search_patient(firstName=>'NIKITA');
+SELECT * from search_function(fname=>'NIKITA');
+select * from search_function(lname=>'shah');
+select * from search_function(_sex=>'male');
+select * from search_function(do_b=>'2002-01-01');
+select * from search_function();
+--
+--create  or replace function  
+--search_patient    
+--             (
+--             PageNumber INTEGER = 1,
+--			 PageSize INTEGER = 20,
+--			 lname VARCHAR default null,
+--			 fname VARCHAR default null,
+--			 _sex VARCHAR default null,
+--			 do_b varchar default null,
+--			 orderby VARCHAR default 'Patient.patient_id')
+--returns table(     
+--  LAST_NAME varchar,
+--  FIRST_NAME varchar,
+--  SEX varchar,
+--  DOB date
+--)
+--language plpgsql
+--as
+--$$
+--declare 
+--query1 varchar(2000) := 'SELECT Patient.LAST_NAME,Patient.FIRST_NAME,SEX.GENDER,Patient.DOB FROM Patient left JOIN SEX ON Patient.SEX = SEX.SEX_ID where 1=1 ';
+--conditional varchar(3000) := '';
+-- 
+--begin
+--    if fname != '' then
+--         conditional := 'and  Patient.FIRST_NAME = '''||fname||'''';
+--    end if;
+--    if lname != '' then 
+--            conditional := conditional||' and Patient.LAST_NAME = '''||lname||'''';
+--        
+--    end if;
+--    if _sex != '' then 
+--            conditional := conditional||' and SEX.GENDER = '''||_sex||'''';
+--    end if;
+--    if do_b != '' then 
+--            conditional := conditional||' and Patient.DOB = '''||do_b||'''';
+--        
+--    end if;
+--    
+--    query1 := query1 || conditional||' ORDER BY '||orderby||' ASC LIMIT '|| PageSize ||' OFFSET (('||PageNumber||'-1) *'|| PageSize||')';
+--    raise notice 'sql %' , query1;
+--    return query execute query1;
+--end;
+--$$
+--
+--select * from search_patient(fname=>'NIKITA');
+--select * from search_patient(lname=>'shah');
+--select * from search_patient(_sex=>'male');
+--select * from search_patient(do_b=>'2002-01-01');
+--select * from search_patient();
 
 --*Query5
 SELECT
@@ -401,9 +285,6 @@ FROM
               INNER JOIN ADDRESS add ON add.PATIENT_ID = P.PATIENT_ID
               INNER JOIN Phone Ph ON ph.ADDRESS_ID = add.ADDRESS_ID
 WHERE Ph.PHONE_NUMBER = '3355668822';
-
-
-
 
 
 
